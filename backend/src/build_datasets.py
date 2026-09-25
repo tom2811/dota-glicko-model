@@ -62,6 +62,18 @@ def build_matches(cache_records: list[dict]) -> pd.DataFrame:
     # Convert start_time from Unix epoch to datetime
     df["start_time"] = pd.to_datetime(df["start_time"], unit="s", utc=True)
     df = df.sort_values("start_time").reset_index(drop=True)
+    
+    # Enrich with team names from pro_matches_raw.csv if available
+    try:
+        raw = pd.read_csv("data/raw/pro_matches_raw.csv")
+        df = df.merge(
+            raw[["match_id", "radiant_name", "dire_name", "league_name"]],
+            on="match_id",
+            how="left"
+        )
+        print(f"  enriched with team names from pro_matches_raw.csv")
+    except FileNotFoundError:
+        print(f"  ⚠ pro_matches_raw.csv not found, team names will be missing")
 
     return df
 

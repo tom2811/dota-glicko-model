@@ -7,6 +7,7 @@ STEPS = {
     "data": [
         ("src/fetch_pro_matches.py", "Fetching match metadata"),
         ("src/fetch_pro_players.py", "Fetching player roles"),
+        ("src/build_lookups.py", "Building player lookup table"),
         ("src/collect_player_data.py", "Fetching rosters"),
         ("src/build_datasets.py", "Building CSVs"),
         ("src/compute_glicko.py", "Computing Glicko ratings"),

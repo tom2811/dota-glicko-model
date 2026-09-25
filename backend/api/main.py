@@ -24,6 +24,10 @@ app.add_middleware(
 model = None
 player_glicko = {}
 player_stats = {}
+matches_df = None
+match_players_df = None
+players_lookup_df = None
+final_ratings_df = None
 
 # Glicko parameters needed for win probability math
 Q = np.log(10) / 400.0
@@ -35,8 +39,9 @@ def E(r, r_opponent, rd_opponent):
 
 @app.on_event("startup")
 def load_model():
-    global model, player_glicko, player_stats
+    global model, player_glicko, player_stats, matches_df, match_players_df, players_lookup_df, final_ratings_df
     base_dir = os.path.join(os.path.dirname(__file__), "..", "models")
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "data", "processed")
     model_path = os.path.join(base_dir, "model.pkl")
     glicko_path = os.path.join(base_dir, "final_player_ratings.csv")
     stats_path = os.path.join(base_dir, "latest_players.csv")
@@ -46,9 +51,24 @@ def load_model():
     if os.path.exists(glicko_path):
         df_g = pd.read_csv(glicko_path)
         player_glicko = df_g.set_index("account_id").to_dict("index")
+        final_ratings_df = df_g
     if os.path.exists(stats_path):
         df_s = pd.read_csv(stats_path)
         player_stats = df_s.set_index("account_id").to_dict("index")
+    
+    # Load match history data
+    matches_path = os.path.join(data_dir, "matches.csv")
+    match_players_path = os.path.join(data_dir, "match_players.csv")
+    players_path = os.path.join(data_dir, "players_lookup.csv")
+    
+    if os.path.exists(matches_path):
+        matches_df = pd.read_csv(matches_path)
+        matches_df["start_time"] = pd.to_datetime(matches_df["start_time"])
+        matches_df = matches_df.sort_values("start_time", ascending=False)
+    if os.path.exists(match_players_path):
+        match_players_df = pd.read_csv(match_players_path)
+    if os.path.exists(players_path):
+        players_lookup_df = pd.read_csv(players_path)
 
 class MatchupRequest(BaseModel):
     radiant_account_ids: list[int]
@@ -134,6 +154,114 @@ def predict_match(req: MatchupRequest):
     return {
         "radiant_win_prob": float(prob),
         "glicko_base_prob": float(win_prob)
+    }
+
+@app.get("/matches")
+def get_matches(page: int = 1, per_page: int = 20):
+    if matches_df is None:
+        raise HTTPException(status_code=503, detail="Match data not loaded")
+    
+    total = len(matches_df)
+    start = (page - 1) * per_page
+    end = start + per_page
+    
+    page_matches = matches_df.iloc[start:end]
+    
+    return {
+        "total": total,
+        "page": page,
+        "per_page": per_page,
+        "matches": [
+            {
+                "match_id": int(row["match_id"]),
+                "date": row["start_time"].isoformat(),
+                "radiant_name": row["radiant_name"],
+                "dire_name": row["dire_name"],
+                "radiant_win": bool(row["radiant_win"]),
+                "duration": int(row["duration"]),
+                "league_name": row["league_name"]
+            }
+            for _, row in page_matches.iterrows()
+        ]
+    }
+
+@app.get("/matches/{match_id}")
+def get_match_detail(match_id: int):
+    if matches_df is None or match_players_df is None or players_lookup_df is None:
+        raise HTTPException(status_code=503, detail="Match data not loaded")
+    
+    match = matches_df[matches_df["match_id"] == match_id]
+    if match.empty:
+        raise HTTPException(status_code=404, detail="Match not found")
+    
+    match_row = match.iloc[0]
+    players = match_players_df[match_players_df["match_id"] == match_id]
+    
+    # Join with player names and Glicko at match time
+    def build_roster(is_radiant):
+        roster_players = players[players["is_radiant"] == is_radiant].sort_values("player_slot")
+        result = []
+        for _, p in roster_players.iterrows():
+            account_id = int(p["account_id"])
+            player_info = players_lookup_df[players_lookup_df["account_id"] == account_id]
+            name = player_info.iloc[0]["name"] if not player_info.empty else f"Player {account_id}"
+            
+            # Derive role from player_slot position (0-4 for radiant, 128-132 for dire)
+            slot = int(p["player_slot"])
+            position = slot % 128  # 0-4 for both teams
+            # Position order: 0=Carry, 1=Mid, 2=Offlane, 3=Soft Supp, 4=Hard Supp
+            
+            # Glicko at match time would require time-series lookup; use current for now
+            glicko = player_glicko.get(account_id, {"r": 1500.0, "rd": 350.0})
+            result.append({
+                "account_id": account_id,
+                "name": name,
+                "fantasy_role": position,  # Use position derived from slot
+                "glicko_rating": float(glicko["r"]),
+                "glicko_rd": float(glicko["rd"])
+            })
+        return result
+    
+    return {
+        "match_id": int(match_row["match_id"]),
+        "date": match_row["start_time"].isoformat(),
+        "radiant_name": match_row["radiant_name"],
+        "dire_name": match_row["dire_name"],
+        "radiant_win": bool(match_row["radiant_win"]),
+        "duration": int(match_row["duration"]),
+        "league_name": match_row["league_name"],
+        "radiant_roster": build_roster(True),
+        "dire_roster": build_roster(False)
+    }
+
+@app.get("/players")
+def get_players():
+    if players_lookup_df is None or final_ratings_df is None:
+        raise HTTPException(status_code=503, detail="Player data not loaded")
+    
+    # Merge lookup with current Glicko ratings
+    merged = players_lookup_df.merge(
+        final_ratings_df[["account_id", "r", "rd"]],
+        on="account_id",
+        how="left"
+    )
+    
+    # Filter out players without ratings
+    merged = merged.dropna(subset=["r"])
+    merged = merged.sort_values("r", ascending=False)
+    
+    return {
+        "players": [
+            {
+                "account_id": int(row["account_id"]),
+                "name": row["name"],
+                "team_name": row["team_name"] if pd.notna(row["team_name"]) else "",
+                "fantasy_role": int(row["fantasy_role"]) if pd.notna(row["fantasy_role"]) else None,
+                "glicko_rating": float(row["r"]),
+                "glicko_rd": float(row["rd"])
+            }
+            for _, row in merged.iterrows()
+        ]
     }
 
 if __name__ == "__main__":
