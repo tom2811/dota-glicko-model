@@ -1,6 +1,9 @@
-.venv/
+backend/.venv/
 data/
 __pycache__/
 *.pyc
 .DS_Store
 .ipynb_checkpoints/
+project_context.md
+project_spec.md
+backend/models/
