@@ -109,14 +109,17 @@ def main():
     pure_glicko_probs = test_df["glicko_win_prob"]
     print(f"Pure Glicko Baseline Log Loss: {log_loss(y_test, pure_glicko_probs):.4f}")
 
-    # Save the trained model for the API
     import joblib
     import os
+    import shutil
     os.makedirs("models", exist_ok=True)
     joblib.dump(model, "models/model.pkl")
-    # Also save the latest player Glicko ratings and team schedule features so we can predict upcoming matches
-    glicko.to_csv("models/latest_glicko.csv", index=False)
-    df_players.to_csv("models/latest_players.csv", index=False)
+    # Save the latest player Glicko ratings and team schedule features so we can predict upcoming matches
+    shutil.copy("data/features/final_player_ratings.csv", "models/final_player_ratings.csv")
+    
+    # We only need the latest stats per player (rest_days, matches_last_7_days)
+    latest_players = df_players.sort_values("start_time").drop_duplicates("account_id", keep="last")
+    latest_players.to_csv("models/latest_players.csv", index=False)
     print("Saved model and latest features to models/")
 
 if __name__ == "__main__":

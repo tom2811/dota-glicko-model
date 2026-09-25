@@ -130,5 +130,10 @@ def main():
     out_df.to_csv("data/features/match_glicko.csv", index=False)
     print("Saved data/features/match_glicko.csv")
     
+    # NEW: Save final player ratings for the API
+    final_ratings = [{"account_id": k, "r": v["r"], "rd": v["rd"]} for k, v in ratings.items()]
+    pd.DataFrame(final_ratings).to_csv("data/features/final_player_ratings.csv", index=False)
+    print("Saved data/features/final_player_ratings.csv")
+    
 if __name__ == "__main__":
     main()
