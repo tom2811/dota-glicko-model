@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL || '/api';
+
 type UpcomingMatch = {
   id: string;
   radiant_name: string;
@@ -101,7 +103,7 @@ function LiveView() {
 
   useEffect(() => {
     const fetchLive = () => {
-      fetch('/api/live')
+      fetch(`${API_URL}/live`)
         .then(res => res.json())
         .then(data => setMatches(data.matches))
         .catch(err => console.error("Failed to fetch live matches:", err));
@@ -157,9 +159,10 @@ function PredictView() {
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [coldStart, setColdStart] = useState(false);
 
   useEffect(() => {
-    fetch('/api/upcoming')
+    fetch(`${API_URL}/upcoming`)
       .then(res => res.json())
       .then(data => {
         setMatches(data.matches);
@@ -182,8 +185,11 @@ function PredictView() {
     setError(null);
     setResult(null);
     
+    // Show cold start warning after 5 seconds
+    const timer = setTimeout(() => setColdStart(true), 5000);
+    
     try {
-      const res = await fetch('/api/predict', {
+      const res = await fetch(`${API_URL}/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -202,7 +208,9 @@ function PredictView() {
     } catch (err: any) {
       setError(err.message);
     } finally {
+      clearTimeout(timer);
       setLoading(false);
+      setColdStart(false);
     }
   }
 
@@ -248,6 +256,12 @@ function PredictView() {
         </div>
       )}
 
+      {loading && coldStart && (
+        <div className="border border-yellow-900/50 bg-yellow-900/10 text-yellow-400 p-4 mt-6 text-sm">
+          API is warming up (first request may take 20-30 seconds)...
+        </div>
+      )}
+
       {result && (
         <div className="border-t border-gray-800 mt-8 pt-6">
           <div className="text-2xl text-white">{result}</div>
@@ -265,7 +279,7 @@ function MatchHistoryView() {
   const [detail, setDetail] = useState<MatchDetail | null>(null);
 
   useEffect(() => {
-    fetch(`/api/matches?page=${page}&per_page=20`)
+    fetch(`${API_URL}/matches?page=${page}&per_page=20`)
       .then(res => res.json())
       .then(data => {
         setMatches(data.matches);
@@ -279,7 +293,7 @@ function MatchHistoryView() {
       setDetail(null);
     } else {
       setExpanded(matchId);
-      const res = await fetch(`/api/matches/${matchId}`);
+      const res = await fetch(`${API_URL}/matches/${matchId}`);
       const data = await res.json();
       setDetail(data);
     }

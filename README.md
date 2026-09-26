@@ -1,31 +1,73 @@
 # dota-glicko-model
 
-Predicts pro Dota 2 matches using player-level Glicko ratings, schedule fatigue, and role-based weights.
+Predicts pro Dota 2 matches using player-level Glicko ratings, schedule fatigue, and role-based weights. Includes web application with upcoming match predictions and live match tracking.
 
-## Setup
+## Quick Start
 
+### Backend Setup
 ```bash
+cd backend
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Usage
-
+### Run Data Pipeline
 ```bash
 python3 run.py          # fetch data + train
 python3 run.py data     # fetch and process data only
 python3 run.py train    # train model only
 ```
 
+### Start API Server
+```bash
+cd backend
+source .venv/bin/activate
+python3 api/main.py      # Starts on http://localhost:8000
+```
+
+### Start Frontend
+```bash
+cd frontend
+npm install
+npm run dev             # Starts on http://localhost:5173
+```
+
 Or run steps individually:
 
-1. `python src/fetch_pro_matches.py` — pull match metadata
-2. `python src/fetch_pro_players.py` — pull player roles
-3. `python src/collect_player_data.py` — pull rosters
-4. `python src/build_datasets.py` — build csvs
-5. `python src/compute_glicko.py` — build ratings
-6. `python src/train.py` — train model
+1. `python3 src/fetch_pro_matches.py` — pull match metadata
+2. `python3 src/fetch_pro_players.py` — pull player roles
+3. `python3 src/collect_player_data.py` — pull rosters
+4. `python3 src/build_datasets.py` — build csvs
+5. `python3 src/compute_glicko.py` — build ratings
+6. `python3 src/train.py` — train model
+
+## API Endpoints
+
+### Core Prediction
+- `POST /predict` - Predict match outcome given 5v5 account IDs
+- `GET /players` - Get all rated players with Glicko ratings
+
+### Upcoming & Live Matches
+- `GET /upcoming` - Upcoming matches from Liquipedia (with roster resolution)
+- `GET /live` - Currently running matches from PandaScore
+
+### Match History
+- `GET /matches` - Paginated historical matches
+- `GET /matches/{id}` - Detailed match with player rosters and ratings
+
+## Data Sources
+
+### Training & Ratings
+- **OpenDota API**: Historical match data (~3,926 pro matches)
+- Player-level Glicko-1 ratings computed chronologically
+- Schedule fatigue features (rest days, recent match load)
+
+### Live Integration
+- **Liquipedia API**: Upcoming match schedules (free, no auth)
+- **Liquipedia Web Scraping**: Team rosters (7-day cache)
+- **Player Name Mapping**: Exact + fuzzy matching to OpenDota database
+- **PandaScore API**: Live match scores and status
 
 ## How the Model Works
 

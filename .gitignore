@@ -10,4 +10,4 @@ backend/models/
 backend/.env
 backend/logs/
 backend/data/team_rosters.json
-
+frontend/.env

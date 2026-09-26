@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: dota-glicko-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python api/main.py
+    envVars:
+      - key: PANDASCORE_API_KEY
+        sync: false
+      - key: PANDASCORE_BASE_URL
+        value: https://api.pandascore.co
+      - key: LIQUIPEDIA_API_URL
+        value: https://dota.haglund.dev/v1/matches
+      - key: LIQUIPEDIA_BASE_URL
+        value: https://liquipedia.net/dota2
+      - key: CACHE_TTL_UPCOMING
+        value: 300
+      - key: CACHE_TTL_LIVE
+        value: 60
+      - key: ROSTER_CACHE_TTL
+        value: 604800
+      - key: SCRAPER_USER_AGENT
+        value: DotaGlickoPredictor/1.0 (Educational Project)
+      - key: SCRAPER_RATE_LIMIT
+        value: 2
