@@ -70,7 +70,7 @@ def _parse_roster(html: str) -> List[Dict]:
     Parse team roster from Liquipedia HTML.
     Looks for the active roster table and extracts player names + positions.
     """
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
     
     # Find roster table (typically has class 'roster-card' or similar)
     # Look for tables with "Active Squad" or "Roster" headers
