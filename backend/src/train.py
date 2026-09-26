@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from scipy.special import expit
 from sklearn.metrics import log_loss, roc_auc_score, accuracy_score
 from sklearn.ensemble import GradientBoostingClassifier
 import warnings
