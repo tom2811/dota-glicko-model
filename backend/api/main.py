@@ -2,14 +2,20 @@ import joblib
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from typing import List
 import pandas as pd
 import numpy as np
 import os
 import sys
 import math
+from datetime import datetime, timedelta
+from dotenv import load_dotenv
+
+load_dotenv()
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from src.train import GlickoInit
+from src import fetch_pandascore, fetch_liquipedia, scrape_liquipedia_rosters, map_players
 
 app = FastAPI(title="Dota 2 Glicko API")
 
@@ -28,6 +34,20 @@ matches_df = None
 match_players_df = None
 players_lookup_df = None
 final_ratings_df = None
+
+# In-memory cache for PandaScore data
+cache = {
+    "upcoming": {"data": [], "fetched_at": None, "ttl_seconds": 300},  # 5 min
+    "live": {"data": [], "fetched_at": None, "ttl_seconds": 60}       # 1 min
+}
+
+def is_cache_expired(cache_key: str) -> bool:
+    """Check if cache entry is expired."""
+    entry = cache[cache_key]
+    if entry["fetched_at"] is None:
+        return True
+    age = (datetime.now() - entry["fetched_at"]).total_seconds()
+    return age > entry["ttl_seconds"]
 
 # Glicko parameters needed for win probability math
 Q = np.log(10) / 400.0
@@ -71,8 +91,8 @@ def load_model():
         players_lookup_df = pd.read_csv(players_path)
 
 class MatchupRequest(BaseModel):
-    radiant_account_ids: list[int]
-    dire_account_ids: list[int]
+    radiant_account_ids: List[int]
+    dire_account_ids: List[int]
 
 @app.get("/")
 def read_root():
@@ -80,24 +100,125 @@ def read_root():
 
 @app.get("/upcoming")
 def get_upcoming_matches():
-    return {
-        "matches": [
-            {
-                "id": "mock-1",
-                "radiant_name": "Team Falcons",
-                "dire_name": "Xtreme Gaming",
-                "radiant_account_ids": [184950344, 102099826, 164532005, 152545459, 136737280],
-                "dire_account_ids": [343084576, 377594124, 196400041, 392169957, 392565237]
-            },
-            {
-                "id": "mock-2",
-                "radiant_name": "Team Liquid",
-                "dire_name": "Gaimin Gladiators",
-                "radiant_account_ids": [126212866, 343084576, 392565237, 152859296, 106755427],
-                "dire_account_ids": [919735867, 185590374, 957204049, 835864135, 130991304]
-            }
-        ]
-    }
+    """
+    Get upcoming Dota 2 matches from Liquipedia with roster resolution.
+    Returns matches with has_roster_data flag indicating prediction availability.
+    """
+    if is_cache_expired("upcoming"):
+        try:
+            liq_matches = fetch_liquipedia.get_upcoming_matches()
+            
+            matches = []
+            for liq_match in liq_matches:
+                teams = liq_match.get("teams", [])
+                if len(teams) < 2:
+                    continue
+                
+                radiant = teams[0]
+                dire = teams[1]
+                
+                radiant_name = radiant.get("name", "")
+                dire_name = dire.get("name", "")
+                
+                # Skip TBD matches
+                if not radiant_name or not dire_name or "TBD" in radiant_name or "TBD" in dire_name:
+                    continue
+                
+                # Scrape rosters (from cache if available)
+                rad_roster = scrape_liquipedia_rosters.get_team_roster(radiant_name)
+                dire_roster = scrape_liquipedia_rosters.get_team_roster(dire_name)
+                
+                # Map to OpenDota account IDs
+                rad_ids = []
+                dire_ids = []
+                
+                if rad_roster and len(rad_roster) >= 5:
+                    for player in rad_roster[:5]:
+                        account_id = map_players.map_liquipedia_to_opendota(player["name"], radiant_name)
+                        if account_id:
+                            rad_ids.append(account_id)
+                
+                if dire_roster and len(dire_roster) >= 5:
+                    for player in dire_roster[:5]:
+                        account_id = map_players.map_liquipedia_to_opendota(player["name"], dire_name)
+                        if account_id:
+                            dire_ids.append(account_id)
+                
+                # Build match object
+                match_data = {
+                    "id": liq_match.get("id", liq_match.get("hash", "")),
+                    "radiant_name": radiant_name,
+                    "dire_name": dire_name,
+                    "scheduled_at": liq_match.get("startsAt"),
+                    "league_name": liq_match.get("leagueName", "Unknown League"),
+                    "best_of": int(liq_match.get("matchType", "Bo3").replace("Bo", "")) if liq_match.get("matchType") else 3,
+                    "stream_url": liq_match.get("streamUrl"),
+                    "has_roster_data": len(rad_ids) == 5 and len(dire_ids) == 5
+                }
+                
+                # Only include account IDs if we have complete rosters
+                if match_data["has_roster_data"]:
+                    match_data["radiant_account_ids"] = rad_ids
+                    match_data["dire_account_ids"] = dire_ids
+                
+                matches.append(match_data)
+            
+            cache["upcoming"]["data"] = matches
+            cache["upcoming"]["fetched_at"] = datetime.now()
+        except Exception as e:
+            print(f"Error fetching Liquipedia data: {e}")
+            if not cache["upcoming"]["data"]:
+                cache["upcoming"]["data"] = []
+    
+    return {"matches": cache["upcoming"]["data"]}
+
+@app.get("/live")
+def get_live_matches():
+    """
+    Get currently running Dota 2 matches from PandaScore.
+    """
+    if is_cache_expired("live"):
+        try:
+            ps_matches = fetch_pandascore.get_running_matches()
+            
+            matches = []
+            for ps_match in ps_matches:
+                opponents = ps_match.get("opponents", [])
+                if len(opponents) < 2:
+                    continue
+                
+                radiant = opponents[0].get("opponent", {})
+                dire = opponents[1].get("opponent", {})
+                results = ps_match.get("results", [])
+                
+                # Extract current score
+                radiant_score = results[0].get("score", 0) if len(results) > 0 else 0
+                dire_score = results[1].get("score", 0) if len(results) > 1 else 0
+                
+                matches.append({
+                    "id": str(ps_match["id"]),
+                    "radiant_name": radiant.get("name", "Unknown"),
+                    "dire_name": dire.get("name", "Unknown"),
+                    "radiant_acronym": radiant.get("acronym"),
+                    "dire_acronym": dire.get("acronym"),
+                    "radiant_score": radiant_score,
+                    "dire_score": dire_score,
+                    "begin_at": ps_match.get("begin_at"),
+                    "league_name": ps_match.get("league", {}).get("name", "Unknown League"),
+                    "tournament_name": ps_match.get("tournament", {}).get("name"),
+                    "best_of": ps_match.get("number_of_games", 3),
+                    "status": ps_match.get("status", "running"),
+                    "streams": [s.get("raw_url") for s in ps_match.get("streams_list", []) if s.get("raw_url")]
+                })
+            
+            cache["live"]["data"] = matches
+            cache["live"]["fetched_at"] = datetime.now()
+        except Exception as e:
+            print(f"Error fetching live matches: {e}")
+            if not cache["live"]["data"]:
+                cache["live"]["data"] = []
+    
+    return {"matches": cache["live"]["data"]}
 
 @app.post("/predict")
 def predict_match(req: MatchupRequest):

@@ -4,8 +4,31 @@ type UpcomingMatch = {
   id: string;
   radiant_name: string;
   dire_name: string;
-  radiant_account_ids: number[];
-  dire_account_ids: number[];
+  radiant_acronym?: string;
+  dire_acronym?: string;
+  scheduled_at?: string;
+  league_name?: string;
+  tournament_name?: string;
+  best_of?: number;
+  has_roster_data?: boolean;
+  radiant_account_ids?: number[];
+  dire_account_ids?: number[];
+};
+
+type LiveMatch = {
+  id: string;
+  radiant_name: string;
+  dire_name: string;
+  radiant_acronym?: string;
+  dire_acronym?: string;
+  radiant_score: number;
+  dire_score: number;
+  begin_at?: string;
+  league_name?: string;
+  tournament_name?: string;
+  best_of?: number;
+  status?: string;
+  streams?: string[];
 };
 
 type HistoryMatch = {
@@ -51,6 +74,7 @@ function useHash() {
 function NavBar({ current }: { current: string }) {
   const links = [
     { hash: '', label: 'Predict' },
+    { hash: 'live', label: 'Live Now' },
     { hash: 'matches', label: 'Match History' }
   ];
   return (
@@ -72,20 +96,88 @@ function NavBar({ current }: { current: string }) {
   );
 }
 
+function LiveView() {
+  const [matches, setMatches] = useState<LiveMatch[]>([]);
+
+  useEffect(() => {
+    const fetchLive = () => {
+      fetch('/api/live')
+        .then(res => res.json())
+        .then(data => setMatches(data.matches))
+        .catch(err => console.error("Failed to fetch live matches:", err));
+    };
+    
+    fetchLive();
+    const interval = setInterval(fetchLive, 60000);  // Refresh every 60s
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      {matches.length === 0 && <p className="text-gray-500">No live matches</p>}
+      <div className="space-y-3">
+        {matches.map(m => (
+          <div key={m.id} className="border-b border-gray-800 py-4 px-2">
+            <div className="flex items-center gap-4 mb-2">
+              <span className="inline-block bg-red-600 text-white text-xs px-2 py-1 font-bold">LIVE</span>
+              <span className="text-[#4ADE80] w-40 text-right font-semibold">
+                {m.radiant_acronym || m.radiant_name}
+              </span>
+              <span className="text-white font-bold w-12 text-center">{m.radiant_score}</span>
+              <span className="text-gray-600 text-sm">-</span>
+              <span className="text-white font-bold w-12 text-center">{m.dire_score}</span>
+              <span className="text-[#F87171] w-40 font-semibold">
+                {m.dire_acronym || m.dire_name}
+              </span>
+            </div>
+            <div className="text-xs text-gray-500 pl-2 flex gap-4">
+              {m.league_name && <span>{m.league_name}</span>}
+              {m.best_of && <span>BO{m.best_of}</span>}
+              {m.streams && m.streams.length > 0 && (
+                <a 
+                  href={m.streams[0]} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300"
+                >
+                  Watch
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 function PredictView() {
   const [matches, setMatches] = useState<UpcomingMatch[]>([]);
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/api/upcoming')
       .then(res => res.json())
-      .then(data => setMatches(data.matches))
-      .catch(() => setError("Failed to load upcoming matches"));
+      .then(data => {
+        setMatches(data.matches);
+        setLoaded(true);
+      })
+      .catch(() => {
+        setError("Failed to load upcoming matches");
+        setLoaded(true);
+      });
   }, []);
 
   async function handlePredict(match: UpcomingMatch) {
+    // Check if we have roster data
+    if (!match.radiant_account_ids || !match.dire_account_ids) {
+      setError("Player roster data not available for this match. Predictions require complete 5-player lineups.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
     setResult(null);
@@ -116,23 +208,36 @@ function PredictView() {
 
   return (
     <>
-      {matches.length === 0 && !error && <p className="text-gray-500">Loading matches...</p>}
+      {!loaded && <p className="text-gray-500">Loading matches...</p>}
+      {loaded && matches.length === 0 && !error && (
+        <p className="text-gray-500">No upcoming matches available at the moment.</p>
+      )}
       
       <div className="space-y-3">
         {matches.map(m => (
-          <div key={m.id} className="border-b border-gray-800 py-4 flex justify-between items-center hover:bg-gray-900/20 px-2">
-            <div className="flex items-center gap-4">
-              <span className="text-[#4ADE80] w-40 text-right">{m.radiant_name}</span>
-              <span className="text-gray-600 text-sm">vs</span>
-              <span className="text-[#F87171] w-40">{m.dire_name}</span>
+          <div key={m.id} className="border-b border-gray-800 py-4 px-2">
+            <div className="flex justify-between items-center hover:bg-gray-900/20 px-2">
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-2">
+                  <span className="text-[#4ADE80] w-40 text-right">{m.radiant_name}</span>
+                  <span className="text-gray-600 text-sm">vs</span>
+                  <span className="text-[#F87171] w-40">{m.dire_name}</span>
+                </div>
+                <div className="text-xs text-gray-500 pl-2">
+                  {m.league_name && <span>{m.league_name}</span>}
+                  {m.scheduled_at && <span className="ml-4">{new Date(m.scheduled_at).toLocaleString()}</span>}
+                  {m.best_of && <span className="ml-4">BO{m.best_of}</span>}
+                </div>
+              </div>
+              <button 
+                onClick={() => handlePredict(m)}
+                disabled={loading || !m.has_roster_data}
+                className="bg-white text-black text-sm py-1.5 px-5 hover:bg-gray-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                title={!m.has_roster_data ? "Roster data not available" : ""}
+              >
+                {m.has_roster_data ? 'Predict' : 'No Data'}
+              </button>
             </div>
-            <button 
-              onClick={() => handlePredict(m)}
-              disabled={loading}
-              className="bg-white text-black text-sm py-1.5 px-5 hover:bg-gray-200 disabled:opacity-50"
-            >
-              Predict
-            </button>
           </div>
         ))}
       </div>
@@ -296,7 +401,9 @@ export default function App() {
         </header>
 
         <main>
-          {hash === 'matches' ? <MatchHistoryView /> : <PredictView />}
+          {hash === 'live' ? <LiveView /> : 
+           hash === 'matches' ? <MatchHistoryView /> : 
+           <PredictView />}
         </main>
       </div>
     </div>
