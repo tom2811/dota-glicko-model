@@ -6,7 +6,6 @@ __pycache__/
 .ipynb_checkpoints/
 project_context.md
 project_spec.md
-backend/models/
 backend/.env
 backend/logs/
 backend/data/team_rosters.json
