@@ -152,14 +152,32 @@ def get_team_roster_by_name(team_name: str) -> List[Dict]:
     """
     teams = get_all_teams(min_rating=1300)
     
+    # Normalize for matching
+    def normalize(name):
+        return name.lower().replace("team ", "").replace(" esports", "").replace(" gaming", "").strip()
+    
+    norm_search = normalize(team_name)
+    
     # Exact match first
     for team in teams:
         if team.get("name", "").lower() == team_name.lower():
             return get_team_roster_by_id(team["team_id"])
     
+    # Normalized exact match
+    for team in teams:
+        if normalize(team.get("name", "")) == norm_search:
+            return get_team_roster_by_id(team["team_id"])
+    
     # Fuzzy match (contains)
     for team in teams:
-        if team_name.lower() in team.get("name", "").lower():
+        team_norm = normalize(team.get("name", ""))
+        if norm_search in team_norm or team_norm in norm_search:
+            return get_team_roster_by_id(team["team_id"])
+    
+    # Last resort: check tag/acronym
+    for team in teams:
+        tag = team.get("tag", "").lower()
+        if tag and tag == norm_search:
             return get_team_roster_by_id(team["team_id"])
     
     return []

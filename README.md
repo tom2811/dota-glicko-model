@@ -68,8 +68,8 @@ Custom `GlickoInit` estimator forces the model to start from pure Glicko probabi
 - Glicko win probability (baseline)
 
 **Performance** (7,607 matches, 80/20 time split):
-- Test AUC: 0.698
-- Test Log Loss: 0.632
+- Test AUC: 0.7031
+- Test Log Loss: 0.6280
 - Glicko baseline: 0.639 Log Loss
 
 Match coverage: 60-80% tier 1, 30-50% tier 2 (only predict with complete rosters).
@@ -97,8 +97,6 @@ backend/
 frontend/
   src/App.tsx          # React UI (hash routing, no react-router)
 ```
-
-See `DEPLOYMENT.md` for production setup, `project_context.md` for architecture details.
 
 ---
 

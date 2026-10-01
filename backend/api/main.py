@@ -132,9 +132,13 @@ def get_upcoming_matches():
                 rad_ids = [p["account_id"] for p in rad_roster[:5]] if rad_roster and len(rad_roster) >= 5 else []
                 dire_ids = [p["account_id"] for p in dire_roster[:5]] if dire_roster and len(dire_roster) >= 5 else []
                 
-                # Verify all players exist in our Glicko database
-                rad_ids_valid = [aid for aid in rad_ids if aid in player_glicko]
-                dire_ids_valid = [aid for aid in dire_ids if aid in player_glicko]
+                # Check which players exist in Glicko database
+                rad_ids_in_glicko = [aid for aid in rad_ids if aid in player_glicko]
+                dire_ids_in_glicko = [aid for aid in dire_ids if aid in player_glicko]
+                
+                # Allow prediction if we have at least 3 players per team with ratings
+                # (use default 1500 rating for missing players)
+                has_roster = len(rad_ids) == 5 and len(dire_ids) == 5 and len(rad_ids_in_glicko) >= 3 and len(dire_ids_in_glicko) >= 3
                 
                 # Build match object
                 match_data = {
@@ -145,13 +149,17 @@ def get_upcoming_matches():
                     "league_name": liq_match.get("leagueName", "Unknown League"),
                     "best_of": int(liq_match.get("matchType", "Bo3").replace("Bo", "")) if liq_match.get("matchType") else 3,
                     "stream_url": liq_match.get("streamUrl"),
-                    "has_roster_data": len(rad_ids_valid) == 5 and len(dire_ids_valid) == 5
+                    "has_roster_data": has_roster,
+                    "debug_rad_roster": len(rad_roster) if rad_roster else 0,
+                    "debug_dire_roster": len(dire_roster) if dire_roster else 0,
+                    "debug_rad_in_glicko": len(rad_ids_in_glicko),
+                    "debug_dire_in_glicko": len(dire_ids_in_glicko)
                 }
                 
-                # Only include account IDs if we have complete rosters with Glicko ratings
-                if match_data["has_roster_data"]:
-                    match_data["radiant_account_ids"] = rad_ids_valid
-                    match_data["dire_account_ids"] = dire_ids_valid
+                # Include account IDs if we have complete rosters (even if not all have Glicko ratings)
+                if len(rad_ids) == 5 and len(dire_ids) == 5:
+                    match_data["radiant_account_ids"] = rad_ids
+                    match_data["dire_account_ids"] = dire_ids
                 
                 matches.append(match_data)
             
@@ -222,6 +230,7 @@ def predict_match(req: MatchupRequest):
         raise HTTPException(status_code=400, detail="Must provide exactly 5 players per team")
 
     def get_player(account_id):
+        # Use Glicko rating if available, otherwise default to 1500 (initial rating)
         g = player_glicko.get(account_id, {"r": 1500.0, "rd": 350.0})
         s = player_stats.get(account_id, {"rest_days": 30.0, "matches_last_7_days": 0.0})
         return {"r": g["r"], "rd": g["rd"], "rest": s["rest_days"], "matches": s["matches_last_7_days"]}
@@ -265,10 +274,15 @@ def predict_match(req: MatchupRequest):
     ]])
 
     prob = model.predict_proba(X)[0][1]
+    
+    # Count how many players had actual ratings vs defaults
+    rad_with_ratings = sum(1 for aid in req.radiant_account_ids if aid in player_glicko)
+    dire_with_ratings = sum(1 for aid in req.dire_account_ids if aid in player_glicko)
 
     return {
         "radiant_win_prob": float(prob),
-        "glicko_base_prob": float(win_prob)
+        "glicko_base_prob": float(win_prob),
+        "confidence": "high" if (rad_with_ratings >= 4 and dire_with_ratings >= 4) else "medium" if (rad_with_ratings >= 3 and dire_with_ratings >= 3) else "low"
     }
 
 @app.get("/matches")
