@@ -15,7 +15,7 @@ load_dotenv()
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from src.train import GlickoInit
-from src import fetch_pandascore, fetch_liquipedia, fetch_opendota_rosters, map_players
+from src import fetch_pandascore, fetch_liquipedia, fetch_opendota_rosters
 
 app = FastAPI(title="Dota 2 Glicko API")
 
@@ -102,7 +102,7 @@ def read_root():
 def get_upcoming_matches():
     """
     Get upcoming Dota 2 matches from Liquipedia with roster resolution.
-    Returns matches with has_roster_data flag indicating prediction availability.
+    OpenDota API returns account_ids directly - no name mapping needed.
     """
     if is_cache_expired("upcoming"):
         try:
@@ -124,25 +124,17 @@ def get_upcoming_matches():
                 if not radiant_name or not dire_name or "TBD" in radiant_name or "TBD" in dire_name:
                     continue
                 
-                # Fetch rosters from OpenDota API (cached)
+                # Fetch rosters from OpenDota API (returns account_ids directly)
                 rad_roster = fetch_opendota_rosters.get_team_roster_by_name(radiant_name)
                 dire_roster = fetch_opendota_rosters.get_team_roster_by_name(dire_name)
                 
-                # Map to OpenDota account IDs
-                rad_ids = []
-                dire_ids = []
+                # Extract account_ids (OpenDota already provides them)
+                rad_ids = [p["account_id"] for p in rad_roster[:5]] if rad_roster and len(rad_roster) >= 5 else []
+                dire_ids = [p["account_id"] for p in dire_roster[:5]] if dire_roster and len(dire_roster) >= 5 else []
                 
-                if rad_roster and len(rad_roster) >= 5:
-                    for player in rad_roster[:5]:
-                        account_id = map_players.map_liquipedia_to_opendota(player["name"], radiant_name)
-                        if account_id:
-                            rad_ids.append(account_id)
-                
-                if dire_roster and len(dire_roster) >= 5:
-                    for player in dire_roster[:5]:
-                        account_id = map_players.map_liquipedia_to_opendota(player["name"], dire_name)
-                        if account_id:
-                            dire_ids.append(account_id)
+                # Verify all players exist in our Glicko database
+                rad_ids_valid = [aid for aid in rad_ids if aid in player_glicko]
+                dire_ids_valid = [aid for aid in dire_ids if aid in player_glicko]
                 
                 # Build match object
                 match_data = {
@@ -153,20 +145,22 @@ def get_upcoming_matches():
                     "league_name": liq_match.get("leagueName", "Unknown League"),
                     "best_of": int(liq_match.get("matchType", "Bo3").replace("Bo", "")) if liq_match.get("matchType") else 3,
                     "stream_url": liq_match.get("streamUrl"),
-                    "has_roster_data": len(rad_ids) == 5 and len(dire_ids) == 5
+                    "has_roster_data": len(rad_ids_valid) == 5 and len(dire_ids_valid) == 5
                 }
                 
-                # Only include account IDs if we have complete rosters
+                # Only include account IDs if we have complete rosters with Glicko ratings
                 if match_data["has_roster_data"]:
-                    match_data["radiant_account_ids"] = rad_ids
-                    match_data["dire_account_ids"] = dire_ids
+                    match_data["radiant_account_ids"] = rad_ids_valid
+                    match_data["dire_account_ids"] = dire_ids_valid
                 
                 matches.append(match_data)
             
             cache["upcoming"]["data"] = matches
             cache["upcoming"]["fetched_at"] = datetime.now()
         except Exception as e:
-            print(f"Error fetching Liquipedia data: {e}")
+            print(f"Error fetching upcoming matches: {e}")
+            import traceback
+            traceback.print_exc()
             if not cache["upcoming"]["data"]:
                 cache["upcoming"]["data"] = []
     

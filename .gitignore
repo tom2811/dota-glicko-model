@@ -1,14 +1,18 @@
-backend/.venv/
-backend/data/raw/
-backend/data/features/
-backend/data/.DS_Store
+# Python
 __pycache__/
 *.pyc
+.venv/
+*.egg-info/
+
+# Environment
+.env
 .DS_Store
-.ipynb_checkpoints/
-project_context.md
-project_spec.md
-backend/.env
+
+# Backend specific
+backend/data/raw/
+backend/data/features/
+backend/data/opendota_rosters.json
 backend/logs/
-backend/data/team_rosters.json
-frontend/.env
+
+# Jupyter
+.ipynb_checkpoints/

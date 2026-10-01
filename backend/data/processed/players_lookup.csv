@@ -98,7 +98,7 @@ account_id,name,team_name,team_id,fantasy_role
 70858166,Yatozhe,OTHODOS,9679139.0,2.0
 71624297,puke,VSTU,9209317.0,2.0
 72393079,Worick,Zero Tenacity,0.0,1.0
-73401082,Dukalis,TEAM VISION,9572001.0,2.0
+73401082,Dukalis,PARIVISION,9824702.0,2.0
 74102771,Mave,Skainam Brothers,10143927.0,3.0
 75525103,YDF,kawaiii girls,1842696.0,1.0
 76153608,tupensaba,Cristalkins,10163960.0,1.0
@@ -132,7 +132,7 @@ account_id,name,team_name,team_id,fantasy_role
 85367644,Scourge McDuck,The Cut,8205424.0,1.0
 85696663,n1ght,Estar Backs,0.0,2.0
 86692726,Yanbura,x5 Gaming,0.0,2.0
-86698277,33,1w,10182357.0,1.0
+86698277,33,1win,10182357.0,1.0
 86725175,Resolut1on,Team Jazz,10150889.0,2.0
 86745912,天鸽,Shopify Rebellion,39.0,1.0
 86756052,Nick Wilde,Villains,8690990.0,1.0
@@ -170,9 +170,9 @@ account_id,name,team_name,team_id,fantasy_role
 92706637,iAnnihilate,The Bug,10170364.0,1.0
 92949094,SsaSparTaN.,JustBetter,9280056.0,2.0
 93516225,Hektor,Villains,8690990.0,2.0
-93526520,bb3px,Level UP esports,0.0,1.0
+93526520,bb3px,Level UP esports,9256405.0,1.0
 93543072,ａｃｉｄ,Partizan,0.0,1.0
-93618577,bzm,1w,10182357.0,4.0
+93618577,bzm,1win,10182357.0,4.0
 93817671,Maladych,Team Yandex,9823272.0,2.0
 93838599,DEFALJOPY,SaltPower,0.0,1.0
 93850611,LagooNa,Shizageddon,10096172.0,2.0
@@ -197,7 +197,7 @@ account_id,name,team_name,team_id,fantasy_role
 97478158,Vvakum,Last Chance,10150366.0,2.0
 97577101,Reya,"NA, we'd win",10163791.0,1.0
 97590558,Ace ♠,Team Liquid,0.0,1.0
-97658618,Timado,Virtus.pro,9895392.0,1.0
+97658618,Timado,Virtus.pro,0.0,1.0
 97683917,QQE,MightyGods,2647338.0,3.0
 97733612,FRK,OTHODOS,9679139.0,1.0
 97734219,maJor,DlyaDruzey,10135663.0,1.0
@@ -242,7 +242,7 @@ account_id,name,team_name,team_id,fantasy_role
 101695162,fy,Xtreme Gaming,0.0,2.0
 102099826,DJ,BLEED,8214850.0,2.0
 102177957,kosma,netanime,0.0,2.0
-102619476,hQc,Xeno Genesis,0.0,2.0
+102619476,hQc,LOOKING FOR TAMMY,8784233.0,2.0
 102644565,ICEICE,Team Zero,9080405.0,2.0
 102856993,川果,VDuobao,2208748.0,2.0
 103006407,linux;champion,SaltPower,0.0,2.0
@@ -258,12 +258,12 @@ account_id,name,team_name,team_id,fantasy_role
 104180366,wakeup,SHKVARKI,10163726.0,1.0
 104188816,KotarouTennouji,CRYSTALLIS XXL,10150681.0,1.0
 104193278,Conchobhar,Imprint Esports,8999237.0,2.0
-104334048,Kidaro,Inner Circle x Insanity,0.0,2.0
+104334048,Kidaro,No Packet Loss,9646467.0,2.0
 104512126,Mac,Team Nemesis,9691969.0,0.0
 104694710,MalCom.X,Nigma Galaxy ,10136357.0,0.0
 104728645,XiaoG,A-SOUL_Official,4108089.0,1.0
 104843631,purpleparad1se`,,0.0,1.0
-105045291,Thiolicor,LGD Gaming,10150538.0,2.0
+105045291,Thiolicor,LGD Gaming,0.0,2.0
 105178768,FartSJ,Fart Studios,8944221.0,0.0
 105241501,Ming,TuMamaEn4Pe!,782858.0,1.0
 105248644,Miracle-,Nigma Galaxy,7554697.0,4.0
@@ -275,7 +275,7 @@ account_id,name,team_name,team_id,fantasy_role
 106150115,Депутат GO,Resrtiction,7284291.0,1.0
 106194007,ogonek,SaltPower,0.0,2.0
 106305042,Larl,Team Spirit,7119388.0,4.0
-106573901,No[o]ne-,TEAM VISION,9572001.0,4.0
+106573901,No[o]ne-,PARIVISION,9824702.0,4.0
 106755427,Mo13ei,Dandelions,0.0,1.0
 106783671,SlaweE,SAND KING GÓMEZ,7626304.0,1.0
 106956005,Gorlomir,GGNA30,7012676.0,1.0
@@ -316,7 +316,7 @@ account_id,name,team_name,team_id,fantasy_role
 111166474,TimohaBasher,Shaman King,2793685.0,2.0
 111377579,ST759,Fight no flight,9791179.0,1.0
 111620041,SumaiL-,LGD Gaming,15.0,4.0
-111750003,kaffs,LGD Gaming,10150538.0,0.0
+111750003,kaffs,LGD Gaming,0.0,0.0
 111847668,KaMoWEN,Digital Ground,9033732.0,1.0
 111921339,Moons,Moon Army,8075808.0,2.0
 112221492,motyaqwe,batina dev9tka,7155070.0,2.0
@@ -334,7 +334,7 @@ account_id,name,team_name,team_id,fantasy_role
 113372833,UnderShock,4Pirates,0.0,1.0
 113421377,Vanilla,剑指傻雕,0.0,2.0
 113435203,ChYuaN,Talon,8597976.0,4.0
-113457795,MooN,Game Master,10008067.0,0.0
+113457795,MooN,Game Master,0.0,0.0
 113557816,Asgrav,Imprint Esports,8999237.0,1.0
 113602555,Blay,Sad BoyS,9359856.0,2.0
 113800929,WebCamLama,Team Never Lose,10151019.0,1.0
@@ -347,7 +347,7 @@ account_id,name,team_name,team_id,fantasy_role
 114374024,AN****❧,COCHLEA,8318424.0,2.0
 114425781,H4NZA,EBATORY,9555719.0,2.0
 114596500,ArrOw,Phenomenon,0.0,0.0
-114638137,dolbo3b,TRAFIC KAK Y VSEH ),10144884.0,1.0
+114638137,dolbo3b,TRAFIC KAK Y VSEH ),0.0,1.0
 114789841,BipBepBop,Luboye Nazvaniye,9698280.0,2.0
 114806611,azverin7,Free For All,9878749.0,1.0
 114852842,Fool,Zajigalka team,10232373.0,2.0
@@ -365,7 +365,7 @@ account_id,name,team_name,team_id,fantasy_role
 116080282,Argius,Qhali,8702318.0,1.0
 116249155,nefrit,Natus Vincere,36.0,1.0
 116525052,Duster,CDUB Esports,8686313.0,2.0
-116585378,MidOne,MOUZ,9338413.0,1.0
+116585378,MidOne,MOUZ,0.0,1.0
 116772658,Kokoko_1,GGNA30,7012676.0,2.0
 116776337,eace,The Chapulines,9454068.0,1.0
 116837520,Anya,Mentality Monsters,0.0,1.0
@@ -478,6 +478,7 @@ account_id,name,team_name,team_id,fantasy_role
 128344639,Novice,Perros Angryy,9731241.0,2.0
 128460395,digitalguilt,Onire Lasos,8563327.0,2.0
 128542684,JyrkiKatainenActor,muikkulevy,8910205.0,2.0
+128559301,ТРУП,smurf power,0.0,2.0
 128565036,MAESTRO,Team Yatagarasu,9419601.0,1.0
 128660724,Ricobaby,Grey Track,10157562.0,2.0
 128686967,PR1ME,Team Parasha,10170405.0,3.0
@@ -486,7 +487,7 @@ account_id,name,team_name,team_id,fantasy_role
 129355051,Sixcius,Ashes Burn,8508038.0,1.0
 129461963,Ruspo,felt,8261882.0,1.0
 129534974,1705,depressed kids,7372761.0,1.0
-129692343,SHKV,4Tatars1Jew,9208047.0,1.0
+129692343,SHVK(4),4Tatars1Jew,9208047.0,0.0
 129722019,10k,Rage gaming,10135768.0,2.0
 129766654,s1mple,,7409326.0,1.0
 129925807,Sherry,SUPER BAOBAO,10157851.0,1.0
@@ -540,7 +541,8 @@ account_id,name,team_name,team_id,fantasy_role
 136737280,JG,Neon Esports,8360138.0,4.0
 136808312,PhaseOne,CLAN 7LW,6269691.0,1.0
 136812808,Mark,CDUB Esports,8686313.0,4.0
-136829091,Whitemon,1w,10182357.0,2.0
+136829091,Whitemon,1win,10182357.0,2.0
+137063846,m1tr1ch,VEGA,9048200.0,2.0
 137074844,67,,0.0,1.0
 137074969,Undisputed,Team Toxin,10137832.0,2.0
 137129583,Xm,Xtreme Gaming,8261500.0,4.0
@@ -590,7 +592,7 @@ account_id,name,team_name,team_id,fantasy_role
 140613225,Cty,Team Zero,9080405.0,0.0
 140721227,Reb,Team Bravery,10135773.0,1.0
 140828734,Do,Total 10K MMR,9157545.0,0.0
-140835095,Batyuk,Yellow Submarine,2576071.0,1.0
+140835095,Batyuk,Team Spirit,7119388.0,1.0
 140872909,Sega-man,Survive Something to Avenge,9996851.0,2.0
 140935592,Lil_Jo5ter,Sisechki Kristolis Daemon Destroyer CUmmander Apparition,10137240.0,2.0
 141023531,z,Made in Philippines,8736661.0,0.0
@@ -653,7 +655,7 @@ account_id,name,team_name,team_id,fantasy_role
 148215639,Monet,Team Refuser,10007878.0,1.0
 148296727,hokengod,,,
 148424490,x1fps,Young team 2,8721966.0,2.0
-148480336,ArzenT,The House Esports,10122515.0,1.0
+148480336,ArzenT,The House Esports,0.0,1.0
 148526973,Jaunuel,Team Nemesis,9691969.0,2.0
 148612029,htiviy_vladik,Team Lynx,9928636.0,3.0
 148797254,ChaikaTrabant,x5 Gaming,8971308.0,2.0
@@ -708,7 +710,7 @@ account_id,name,team_name,team_id,fantasy_role
 155920682,Low,GoonTeam,0.0,1.0
 156006059,Kieldwie,DotaFlow,10075914.0,3.0
 156029808,Carlo,Blacklist Rivalry ,8668460.0,2.0
-156328257,Fbz,REKONIX,0.0,3.0
+156328257,Fbz,Xipto,10242397.0,1.0
 156388046,crystalblanca,royalpuppeys,0.0,3.0
 156464053,AL®,Saclo-Team,7119359.0,2.0
 156485213,waveformn,4ikibamboni,0.0,2.0
@@ -730,6 +732,7 @@ account_id,name,team_name,team_id,fantasy_role
 158358700,vanescaaaa,Without Hesitation,2400360.0,1.0
 158425391,jedd,InterActive Philippines,0.0,1.0
 158498049,iMp,,0.0,0.0
+158629153,Symmetric,Lord of Games,10242906.0,1.0
 158747754,totsuke,Солевая шахта,8197803.0,0.0
 158845062,FluidynamicTuna,God's Pig,4918106.0,2.0
 158847773,天命,Yakutou Brothers,0.0,0.0
@@ -768,7 +771,7 @@ account_id,name,team_name,team_id,fantasy_role
 163855721,Ksips,POVole slychaya,10150688.0,1.0
 164027898,hatekrime,TA TAM TEAM,9299262.0,1.0
 164047347, 86,Team Spirit Academy,9948367.0,1.0
-164199202,9Class,TEAM VISION,9572001.0,2.0
+164199202,9Class,PARIVISION,9824702.0,2.0
 164213148,SeKai-,Nethercore,9109753.0,2.0
 164264945,RedTie,TEAM YAOBIE,10014558.0,1.0
 164506534,bottega,MODUS,0.0,1.0
@@ -875,7 +878,7 @@ account_id,name,team_name,team_id,fantasy_role
 177203952,Yuma,PlayTime,0.0,1.0
 177411785,Daxao,LEVEL UP,3322951.0,1.0
 177776667,qwwq,,0.0,3.0
-177798748,starless,BŮČCI 5 VŮNÍ,9742838.0,1.0
+177798748,starless,1000-67,10281768.0,1.0
 177953305,Yadomichi,Estar Backs,0.0,2.0
 178008920,whatswrongwithme,Burmalda,10163667.0,1.0
 178043545,♛ Ee Zed ,Team Cinder,7938017.0,1.0
@@ -900,11 +903,11 @@ account_id,name,team_name,team_id,fantasy_role
 181538301,vinder 19/09,Happy Boys,7780838.0,1.0
 181594556,Mana,Alice,9946821.0,1.0
 181645700,EldeR-,TEIKO,6937607.0,2.0
-181716137,inYourdreaM,REKONIX,9828897.0,1.0
+181716137,inYourdreaM,Xipto,10242397.0,1.0
 181774949,Creepachyo,LFT,0.0,2.0
 181987328,Askles^,Shizageddon,0.0,1.0
 182119836,MATYMBA1337,TwoPR,8153844.0,2.0
-182322692,fYoung年轻的神~,TeamDk,9799036.0,1.0
+182322692,fYoung年轻的神~,TEAM TEIKO,10281459.0,1.0
 182437250,Пивной колбастер,DEMONDESTROYERCOMMANDERAPPARACIONPROTECTOR,7871205.0,1.0
 182576483,長風,Nice Comfortble Home.国光金店,1569469.0,0.0
 182621247,LJF,白马河战舰,10143815.0,1.0
@@ -958,6 +961,7 @@ account_id,name,team_name,team_id,fantasy_role
 188430155,kencurrieart,Nazvanie,8372259.0,3.0
 188508451,刘亦,全才战队,10150609.0,1.0
 188763118,unexpected!!,Motilek,8262006.0,1.0
+188799754,inK-,EGC,10282065.0,1.0
 188953151,Ice Coke.,Cloud Rising,9886289.0,1.0
 189155334,Teacher_Bauer,Seven Sirens,10088665.0,2.0
 189275772,RMC,Team Parasha,10170405.0,3.0
@@ -998,7 +1002,7 @@ account_id,name,team_name,team_id,fantasy_role
 193564777,tv/otakerdota,Looking f team,7356807.0,1.0
 193702114,Lumière龙<,mm,9915303.0,1.0
 193766950,nárcissism,ABSOLUTE TEAM,9782011.0,1.0
-193815691,Q,TEAM GRIND,10135834.0,2.0
+193815691,Q,Xipto,10242397.0,2.0
 193884241,ponlo,Ilbirs Esports,0.0,2.0
 193938955,Ananas$s,,0.0,0.0
 194057091,MightyZeus,MightyGods,2647338.0,2.0
@@ -1011,14 +1015,14 @@ account_id,name,team_name,team_id,fantasy_role
 194979527,shigetsu,Yellow Submarine,0.0,1.0
 195013161,Nedavniy,Lunaris,9895361.0,1.0
 195072449,sheep,Cloud Rising,9886289.0,2.0
-195108598,Noticed,TEAM VISION,9572001.0,1.0
+195108598,Noticed,PARIVISION,9824702.0,1.0
 195543240,IZZZI,GGNA30,7012676.0,1.0
 195688091,человек паук,bc.game,9174269.0,1.0
 195821717,christie,,0.0,2.0
 196185227,MoonLight,Modo Serio,0.0,0.0
 196400041,Se,Inner Circle x Insanity,0.0,2.0
 196481318,Panda,LEVEL UP,3322951.0,4.0
-196482746,darkniA,Two Move,10136133.0,1.0
+196482746,darkniA,Level UP esports,9256405.0,1.0
 196490133,Focus,JustBetter,9280056.0,1.0
 196599747,Angel Eyes,AQUILAS,9488852.0,2.0
 196617903,Lovely,Mad Kings Esports,8740097.0,2.0
@@ -1059,7 +1063,7 @@ account_id,name,team_name,team_id,fantasy_role
 201206759,SooQb,Raven Squad,0.0,1.0
 201273785,Aswang,BigBiba,9265558.0,2.0
 201311526,Zy`,Timebomb,7266156.0,2.0
-201358612,Nisha,Team Liquid,2163.0,4.0
+201358612,Nisha,Team Liquid,0.0,4.0
 201590698,striker,Papsakaya Mogila,0.0,1.0
 201839043,抖音快乐面条,抖音快乐面条,10242186.0,1.0
 202135375,番茄木雕,白马河战舰,10143815.0,2.0
@@ -1070,7 +1074,7 @@ account_id,name,team_name,team_id,fantasy_role
 202643243,Kadask,Team  LDM,10149929.0,2.0
 202864208,chenopicker 陈,CHENpions,9981021.0,2.0
 202904153,Chkudi,Uncrowned Kings,10170826.0,2.0
-203351055,Malik,Pipsqueak + 4,10150633.0,3.0
+203351055,Malik,Pipsqueak + 4,0.0,0.0
 203596299,7,Sad BoyS,9359856.0,2.0
 203878867,pestov300,DeadKid,10170058.0,1.0
 203961150,`DαrKnesS-<3,Rectify,8538804.0,1.0
@@ -1195,7 +1199,7 @@ account_id,name,team_name,team_id,fantasy_role
 230098600,Nesfeer,Sibe Team,9081007.0,1.0
 230342574,OG.rOcK,,0.0,3.0
 230396535,Mellow,AKAPULKO,9273072.0,1.0
-230487729,Ekki,Pipsqueak + 4,10150633.0,2.0
+230487729,Ekki,Pipsqueak + 4,0.0,2.0
 230580807,Kitzz,GRIN Esports,8406842.0,2.0
 230617400,Night,future esport,9784780.0,0.0
 230780727,Pegasus,BEAST SHAOLIN,8556423.0,2.0
@@ -1218,6 +1222,7 @@ account_id,name,team_name,team_id,fantasy_role
 233940074,Gotham,misolo5,0.0,2.0
 234119750,yowaai,Rune Eaters,0.0,1.0
 234162477,Breakable,,0.0,0.0
+234686565,enz0,Team Ibans,0.0,1.0
 234886979,kNUcKlE,Paris Saint-Germain&LGD Gaming,6212653.0,1.0
 235089895,Asado,SaltPower,10136306.0,1.0
 235107163,HaDe,Living Legends,5127372.0,1.0
@@ -1236,7 +1241,7 @@ account_id,name,team_name,team_id,fantasy_role
 237450511,XiaoG,NoName,10115107.0,1.0
 237529610,Zeppik,,0.0,2.0
 237578577,lost,Made in Philippines,8736661.0,2.0
-237610210,Shura Glitchless,Most,10191760.0,0.0
+237610210,Shura Glitchless,Most,0.0,0.0
 237750255,Felc <,ggb,9813041.0,1.0
 237885774,DezRaptor,Team Orchid,10135965.0,0.0
 238146811,ILZH,Natus Vincere,36.0,0.0
@@ -1366,7 +1371,7 @@ account_id,name,team_name,team_id,fantasy_role
 270048484,Dre[A]mer,Hydra,7731462.0,1.0
 271436624,scaryfxz,ymalishi,10095799.0,3.0
 272345292,Amaterasu,Ryodan,9332157.0,1.0
-273368664,ChudYasteR太陽,Team Tsundere,8805841.0,2.0
+273368664,ChudYasteR太陽,Team Tsundere,8805841.0,1.0
 273452548,beastmode,RAKUZAN,8836855.0,3.0
 273746932,Sin1ster,4-19 Prospects,0.0,1.0
 273828532,Wick ,BRG,10136744.0,3.0
@@ -1419,7 +1424,7 @@ account_id,name,team_name,team_id,fantasy_role
 292462468,anotherhope,SHOVEL,9586038.0,1.0
 292829433,wota2,DIREBORN,10150434.0,1.0
 292896836,PowerStrike,1000pts,9006718.0,1.0
-292921272,Wisper,LGD Gaming,10150538.0,1.0
+292921272,Wisper,LGD Gaming,0.0,1.0
 293173865,MrWave,War of Attrition,9926467.0,2.0
 293364676,Dimutka,Wolfs Pro,4562386.0,1.0
 293386280,uglxplastic,SquidGame,10163539.0,3.0
@@ -1447,7 +1452,7 @@ account_id,name,team_name,team_id,fantasy_role
 296327854,-Micro.Control,KillTeam,9813046.0,1.0
 296601357,ValOdbka,TiltedBoys,7584152.0,1.0
 296833021,Fidir,FEFU 2,10061298.0,2.0
-297118630,ShadOw.o,The House Esports,10122515.0,1.0
+297118630,ShadOw.o,The House Esports,0.0,1.0
 297162295,XaNT,Energy,9716514.0,1.0
 297396547,Alucid,IJskoud eSports,7205250.0,1.0
 297507430,Scalers,ABSOLUTE TEAM,9782011.0,1.0
@@ -1474,7 +1479,7 @@ account_id,name,team_name,team_id,fantasy_role
 301750126,Mikoto,Aurora Gaming,9467224.0,4.0
 301787237,KONCHENNY1,V-PRIME,9893475.0,1.0
 301869060,koss,Gomosektorat Arsenia,9454096.0,3.0
-302214028,Collapse,Team Spirit,7119388.0,1.0
+302214028,Collapse,Team Spirit,0.0,1.0
 302495486,Raspberryyy,D1CKPEEK,10137004.0,2.0
 302568414,RedMonster,Qhali,8702318.0,2.0
 302580950,ZUK0♥,Savage Slime,8204662.0,1.0
@@ -1527,7 +1532,7 @@ account_id,name,team_name,team_id,fantasy_role
 313848944,blusssedd,,0.0,1.0
 313871037,Atomuratortomura,Team Navalny,0.0,1.0
 314058936,SunSlize,Bad Bees,10101673.0,2.0
-314409795,23w,oyasumi,9545972.0,2.0
+314409795,23w,NovSU Team,9939024.0,2.0
 314584168,CTOMAHEH1,B8,8376426.0,2.0
 314661533,Berting,Furious Beast,8429139.0,1.0
 314813978,van9_FiMBOi,6_abs0suti_7,10144363.0,3.0
@@ -1565,6 +1570,7 @@ account_id,name,team_name,team_id,fantasy_role
 321533481,blessed,SixteenNine,8254403.0,1.0
 321580662,Yatoro,Team Spirit,7119388.0,1.0
 321716882,El Tío,Dogs Gaming,6260405.0,2.0
+321835032,Makzzim,OTSOS/GAMING,8244564.0,1.0
 321844415,GraXam,lll,8582974.0,1.0
 322010194,Lissex,Qhali,8702318.0,1.0
 322051434,Doom,Pirosunders,8563516.0,1.0
@@ -1619,11 +1625,12 @@ account_id,name,team_name,team_id,fantasy_role
 329977411,Saadman01,The Cut,8205424.0,4.0
 330130234,Phaxew,The Iceman Cometh,10170955.0,1.0
 330534326,Akashi,Execration,0.0,1.0
+330611526,DebáhPark,,0.0,1.0
 330962569,Μίδας,ZXC Vityaz,8557556.0,2.0
 331295929,BestFrost,TheNewBest,10150852.0,1.0
 331711578,elmo^^,MODUS,7299465.0,3.0
 331793938,COQUITO ,Pachaqtk E-sports,7236345.0,3.0
-331855530,Pure,Iron Wing,10150413.0,1.0
+331855530,Pure,1win,10182357.0,1.0
 331861607,GRouseB,DF JUNIOR,9823905.0,3.0
 332531915,はかい,LIGHTNIGHT,8526666.0,2.0
 332710406,Mann,UROBOROS,10135949.0,3.0
@@ -1659,7 +1666,7 @@ account_id,name,team_name,team_id,fantasy_role
 339317267,Cartola,Alpha Wolves,8359606.0,1.0
 339819022,jonchik_kapushonchik,YAICA,9477218.0,2.0
 340184924,Hitogami,NOVA GAMING,8475713.0,1.0
-340421206,Htrd,Two Move,10136133.0,2.0
+340421206,Htrd,Level UP esports,9256405.0,2.0
 340920909,Xany,doggy style enjoyers,8944676.0,1.0
 341031785,Rim,POVole slychaya,10150688.0,1.0
 341057969,tupenko,Sesbian lex enjoyers,0.0,2.0
@@ -1688,7 +1695,7 @@ account_id,name,team_name,team_id,fantasy_role
 345973908,DiSkuve,D1sabled,10144442.0,2.0
 346029418,G@R@B@To,GALAXY ,8055315.0,1.0
 346189297,arsenyabog,ZOMBIEBARZ,9834534.0,1.0
-346412363,Ari,1w,10182357.0,2.0
+346412363,Ari,1win,10182357.0,2.0
 346437398,ZJillT,Deep Ace Gaming,1240310.0,2.0
 346554734,Forlight,Enforce Endless,4374604.0,3.0
 346840921,†ZemakieL† ,TheNewBest,10150852.0,2.0
@@ -1696,7 +1703,7 @@ account_id,name,team_name,team_id,fantasy_role
 347650668,Ksiaze_Bulba,Nivalis,8194465.0,1.0
 347918747,Alexzoll,crystallis gang gang 52,10143907.0,2.0
 348047119,demented,Bedolagi,0.0,1.0
-348150441,Ethelayako,Pleaze Gaming,4086533.0,1.0
+348150441,Ethelayako,Odin Gaming,7999457.0,1.0
 348476223,IMPACT,Sons of Agama,10150700.0,1.0
 348703642,Bekzhan,UALEIKUMNIHAO,9019673.0,2.0
 349198287,Jie,Team Synergy,5057924.0,3.0
@@ -1746,7 +1753,7 @@ account_id,name,team_name,team_id,fantasy_role
 358507879,Bastian,x5 Gaming,0.0,2.0
 358778381,RUBIAZ,Chiriuchu gamer,10150766.0,2.0
 358797591,shift,Total Control,10157915.0,2.0
-358889405,Annor,Pandora Team,9580116.0,1.0
+358889405,Annor, iron fortress,10281864.0,1.0
 358927955,VibeWood,UROBOROS,10135949.0,2.0
 358985234,Hibiku-Kohaku,TIANCI'S BROTHER,9594483.0,2.0
 359047252,Billi,,0.0,3.0
@@ -1764,7 +1771,7 @@ account_id,name,team_name,team_id,fantasy_role
 362097391,TEMA LAL666,artness Esports,9379871.0,1.0
 362155853,watmen,Sesbian lex enjoyers,10142726.0,2.0
 362367000,dojdeat,SHKVARKI,10163726.0,1.0
-362433020,Pogi,Egoists,9657657.0,3.0
+362433020,Pogi,GGK,9360402.0,0.0
 362668319,3ombe,Team Warta,0.0,2.0
 362702556,Croutledge,Mackems on Tour,7980699.0,2.0
 362907198,ScarletYAlow,SaltPower,0.0,2.0
@@ -1791,7 +1798,7 @@ account_id,name,team_name,team_id,fantasy_role
 366614071,KYM,Team Sangre,10150275.0,0.0
 367202862,Valex,BackTrackBoys,7654502.0,0.0
 367300969,kotoamatsukami,Cloud9,8605863.0,1.0
-367384894,bol1,CAKC,0.0,1.0
+367384894,bol1,CAKC,0.0,2.0
 367471772,Bluetooth Mouse,Team Perloo,10163879.0,0.0
 367534938,Moreno,CHANKAS BC,8803219.0,1.0
 367540062,"</OR1UK3N>☼_""ƒ""",Golden Fire Riders,8780452.0,2.0
@@ -1835,7 +1842,7 @@ account_id,name,team_name,team_id,fantasy_role
 373179046,koloma,daite snesti,10150426.0,0.0
 373667079,Yumeyume-,Cloud Rising,9886289.0,1.0
 373728448,.,Without TikTok Team,0.0,2.0
-373803484,( ͡° ͜ʖ ͡°)ʖ ͡°) ͡͡,,0.0,2.0
+373803484,( ͡° ͜ʖ ͡°)ʖ ͡°) ͡͡,,0.0,0.0
 373985732,quaZar,Blaze Esports,10136917.0,1.0
 374130957,Yakutzawa,Samurai,8351117.0,1.0
 374229025, Z i p ,Malicious Molesters,10001862.0,3.0
@@ -1851,6 +1858,7 @@ account_id,name,team_name,team_id,fantasy_role
 375507918,23savage,Xipto,10242397.0,1.0
 375837992,сухой прайм,ГАЗМЯС 2 crystallis ,10150718.0,3.0
 375952799,fl1nkq,200th team,9896155.0,1.0
+376278613,Fiona,Дошоо,9081306.0,1.0
 376421854,Nvd-,Six Cats,0.0,0.0
 376571133,влитый(не брать),Shizageddon,0.0,3.0
 377594124,11,IHC,9005019.0,1.0
@@ -1928,7 +1936,7 @@ account_id,name,team_name,team_id,fantasy_role
 395383838,Kaden,LA BANDA DEL CHOCLITO,9917586.0,1.0
 395483413,SupIz7zalup,DolbyYebi Enterprise,9745853.0,0.0
 395690381,Professor,,,
-395770377,Asao,Hokori,10150267.0,2.0
+395770377,Asao,Hokori,0.0,2.0
 396463048,Vikvikvik,strawberry milkshake,10137163.0,2.0
 396642793,user0,THE MASK,10137912.0,2.0
 396651757,ilmeria,4 Anchors + Ilmeria,0.0,1.0
@@ -1990,7 +1998,7 @@ account_id,name,team_name,team_id,fantasy_role
 409250860,KitsuuuReirei,Pathetic.Shitters,10129232.0,2.0
 409270278,Bobby,Team homework,10157393.0,2.0
 410545876,rampage,RKN eSports,10170828.0,0.0
-410707457,Fantassy,Zetta Games,9600331.0,0.0
+410707457,Fantassy,Zetta Games,0.0,0.0
 410916466,He_TBOE_delo,TeamDubrovo,10136967.0,1.0
 411591372,advisedly,ywio,10170503.0,1.0
 411596849,鱼王,The goal of all life is death,9315393.0,2.0
@@ -2021,7 +2029,7 @@ account_id,name,team_name,team_id,fantasy_role
 418427214,Artza,tspirit,0.0,1.0
 418749303,Gabimaru,WW team,9839713.0,3.0
 418891385,GYR0bass,Team Dodiks,10136254.0,2.0
-418942836,rincyq,Pipsqueak + 4,10150633.0,1.0
+418942836,rincyq,Pipsqueak + 4,0.0,1.0
 419399987,NoFair17,ECLIPCE,10150496.0,2.0
 419592875,GinRC,Lava Girls,0.0,2.0
 419948853,nyw,Lindorfitos,10150568.0,3.0
@@ -2077,10 +2085,11 @@ account_id,name,team_name,team_id,fantasy_role
 436955631,Артемчик,КОТИКИ,9887378.0,2.0
 437026302,Sagun,REVENGE GAMING,0.0,2.0
 437039815,papugg,arizona mesa,9717396.0,1.0
-437052058,Feliks,Bibinto Squad,0.0,1.0
+437052058,Feliks,Bibinto Squad,0.0,2.0
 437157143,JanklodDodep,DolbyYebi Enterprise,9745853.0,2.0
 437595980,PAxMaHuHoB`,Zenit Saint Petersburg,8086067.0,1.0
 437728461,I not Issa,Villains,8690990.0,1.0
+437780285,Sora Kasugano,kiss me?,9095679.0,2.0
 439138832,JK,白马河战舰,10143815.0,2.0
 439175846,daquqe,Team MUSHROOMS,9808521.0,1.0
 439272967,,,,
@@ -2095,6 +2104,7 @@ account_id,name,team_name,team_id,fantasy_role
 443534346,k1ngsman,Cartel de Idjot,8605482.0,1.0
 444107136,Awanamiバカ,Five Percent,8836642.0,2.0
 444301916,I r e z u m i < ,irezumi,0.0,1.0
+444493865,spineake,TEMCHIKI52,10242610.0,4.0
 444515743,ХАНАХАКИ ,Pavaga Gaming BY,8421741.0,3.0
 444542530,Nedlog,DF RISING,0.0,2.0
 444562853,Molecular,For Groot,10137676.0,1.0
@@ -2175,7 +2185,7 @@ account_id,name,team_name,team_id,fantasy_role
 474775455,ritashi最強,ritashidog,9408618.0,1.0
 475073810,Mimeka,Argentum,8643666.0,2.0
 475528003,cmitani,Team Spirt,10048136.0,3.0
-475624715,SONIC,Apostles game,9419664.0,2.0
+475624715,SONIC,Apostles game,0.0,2.0
 477070996,mavis,Seize the day,9600214.0,2.0
 477264465,Sneyder Sav,,0.0,2.0
 478908355,loniamha,БОЖИМ.team,9814117.0,1.0
@@ -2222,7 +2232,7 @@ account_id,name,team_name,team_id,fantasy_role
 746996297,Zet,Team metamorphosis,10137569.0,1.0
 748737168,666,Антейку,10136682.0,1.0
 749565501,z3wr1,Sky,10250735.0,3.0
-750008012,holy,natch,10014711.0,3.0
+750008012,holy,natch,10014711.0,1.0
 750970898,ritennui,disbandtommorow,10212413.0,1.0
 752926528,(6pos),Flow,10225079.0,1.0
 754520732,zyk,Team Maybe,10135785.0,1.0
@@ -2239,7 +2249,7 @@ account_id,name,team_name,team_id,fantasy_role
 773579052,xeshkaa,,0.0,1.0
 773908914,regretful,broodckoe,10136233.0,1.0
 773932264,PTU,viva la,10207523.0,1.0
-773972928,n0ober_,shtangencirkul cristallisa,10150884.0,1.0
+773972928,n0ober_,shtangencirkul cristallisa,0.0,1.0
 774189164,Labirint,KOPTILNYA,9885760.0,1.0
 775605147,d1gikale,LS Buffalos,10143675.0,0.0
 776732022,temniy drun,team chokoboy,10136597.0,1.0
@@ -2285,7 +2295,7 @@ account_id,name,team_name,team_id,fantasy_role
 800488712,kilnyx,softside,10075800.0,1.0
 800565215,Skadi-,Nova,10225908.0,2.0
 801989722,Wh1tNey,PLEmya,10129390.0,3.0
-803684216,Nepsiq,SIx Seven team,10136623.0,1.0
+803684216,Nepsiq,SIx Seven team,0.0,1.0
 804066003,raze,fdr3ams.,10136755.0,1.0
 804092733,rezo,Solar system,10135830.0,2.0
 804530263,lulu<3,Heavy Suite,10081550.0,2.0
@@ -2303,6 +2313,7 @@ account_id,name,team_name,team_id,fantasy_role
 812459916,M|n,Dodo team,10144492.0,1.0
 812628601,Suilor,BNR,9209553.0,1.0
 813003650,fanex,moonlight,10150387.0,2.0
+814350282,TRUE FORM,GENERATION OF MIRACLE,10281761.0,1.0
 814417830,EBB,Team Vultures,10136977.0,1.0
 814853393,Hooi,,,
 814939388,lzxtyro,Geden,10074410.0,1.0
@@ -2465,7 +2476,7 @@ account_id,name,team_name,team_id,fantasy_role
 869700354,Migray,PCCC,9905616.0,2.0
 870749509,123,,,
 871718649,sosalka,soslo,10135548.0,3.0
-872046859,M3liodaS,The House Esports,10122515.0,2.0
+872046859,M3liodaS,The House Esports,0.0,2.0
 872243408,Korka,,0.0,2.0
 872437743,boxer,We are here,0.0,2.0
 872580992,stacy,Roflans.Forever Young,9466369.0,2.0
@@ -2526,6 +2537,7 @@ account_id,name,team_name,team_id,fantasy_role
 883711263,Tangyuan,AncientLizards,0.0,0.0
 884186564,Afiks,Mocean,9938131.0,1.0
 884209964,Pow3r,PWR Studios,9743559.0,1.0
+884347671,Broken,TEMCHIKI52,10242610.0,2.0
 884555786,KSHMRQ,Team Eclipse,10208590.0,3.0
 884555855,Griffith,odium rejects ,8691705.0,1.0
 885347502,icecoldsmoke,bagmet,9752978.0,1.0
@@ -2562,12 +2574,13 @@ account_id,name,team_name,team_id,fantasy_role
 890928937,布道.BruceWayne,Trash,8862410.0,3.0
 891106738,Slavw,Kobald Zigadir,8656734.0,1.0
 891154650,PERDAN4IK,Shizageddon,0.0,2.0
+891166794,AGULSHAP,TEAM VOID,9156917.0,4.0
 891413986,psionic,DotaFlow,10075914.0,0.0
 891753793,sinfulgod,CrimePie,8644193.0,2.0
 891997306,seicex,ya sosal,9781937.0,1.0
 892061504,Mefisto,Umbral Tide,10182294.0,2.0
 892477646,ZPPPK1D,Crystallizirovanii Napitki,10169214.0,1.0
-892486081,kae,Team Spirit Academy,9948367.0,0.0
+892486081,kae,Team Spirit Academy,9948367.0,1.0
 892935483,Lachowski,The First Dance ,10144122.0,1.0
 893229478,tedecti,Aghanims Team,9717532.0,2.0
 893398159,Sweaded,Kobald Zigadir,8656734.0,1.0
@@ -2685,6 +2698,7 @@ account_id,name,team_name,team_id,fantasy_role
 917497424,Grovii,,0.0,0.0
 917640863,ama,TeamPiskers,10042106.0,2.0
 918133533,Ivy,Xine5 Esports,9716640.0,3.0
+918968170,Gaben Agent,Young Team,8442788.0,2.0
 919310236,Dontow,Chrome Sports,9867554.0,2.0
 919393554,RedHolms,Kukanskie Kazachki,9879278.0,2.0
 919492744,dpc,Ryodan,9332157.0,1.0
@@ -2736,7 +2750,7 @@ account_id,name,team_name,team_id,fantasy_role
 932292974,Dikisvin,YAICA,9477218.0,1.0
 932472979,-praised,Team Ana1,0.0,1.0
 932890522,InfinityHope,School suicides,7389426.0,1.0
-933027395,cvrtxd,hapanyli,9665415.0,0.0
+933027395,cvrtxd,hapanyli,0.0,0.0
 933412030,egoist,smurf power,0.0,2.0
 933464791,MOLFAR,DOTA RANGERS,10136492.0,0.0
 934516701,Yokkoso,Emo fluttershy team,0.0,1.0
@@ -2764,11 +2778,12 @@ account_id,name,team_name,team_id,fantasy_role
 957204049,gotthejuice,Natus Vincere,36.0,1.0
 957267716,andezyy,BANANASQD,9927975.0,1.0
 958389409,flightman,Balikbayan Kings,10054884.0,2.0
-959029042,Sonic上帝,dead denasty ,0.0,0.0
+959029042,Ar4angelqt,NOGamers,0.0,0.0
 960932533,a,Pirimoga Team,10136127.0,3.0
 961327329,Hugh1442,Big brain,7356881.0,0.0
 964095383,220368153,Asuno雨,9884803.0,2.0
 964459225,Xani~,Losers,10251050.0,3.0
+964972015,Ephey♥,,0.0,1.0
 965695925,DEMON,ПИПКА CRYSTALLIS'а,10135937.0,1.0
 965993145,Graf Fkula,Б@БУW]{@_YM1R@ET,10138217.0,1.0
 966682946,Оливер,Yacu Gaming,10136599.0,0.0
@@ -2784,7 +2799,7 @@ account_id,name,team_name,team_id,fantasy_role
 969244166,Sigmaman2008,Team MUSHROOMS,0.0,0.0
 969332071,BlaDoSeK,サタン,8508340.0,0.0
 969374676,Rinkore,DF YOUTH,0.0,2.0
-970042348,yurme,BigBalls,9426807.0,1.0
+970042348,yurme,Cool Mopses,10281842.0,1.0
 970094946,AYT67,AYT67 DIVISION,10135623.0,2.0
 970172405,Gr1ffy,Vorpal Swordz,9705734.0,3.0
 971406657,Locky,Team MUSHROOMS,9808521.0,2.0
@@ -2853,7 +2868,7 @@ account_id,name,team_name,team_id,fantasy_role
 1004869752,Сlaymore,RillStuff.team,9782030.0,0.0
 1005439256,Kwerdu,Cristalli(na)s,10143725.0,1.0
 1005819324,Crimz,Murda Teams,9723954.0,2.0
-1005856920,начальник,BARBER CHOP TEAM,0.0,1.0
+1005856920,начальник,BARBER CHOP TEAM,0.0,0.0
 1005929836,Sizuky,Double Ellimination,9966325.0,1.0
 1006230938,Ant1nomia,LsK|Team,10138294.0,1.0
 1006311343,qrxzt,CRISTALLIS PRIME,10143945.0,3.0
@@ -2897,7 +2912,7 @@ account_id,name,team_name,team_id,fantasy_role
 1017254040,Rezinka,Avocados From Mexico,9850167.0,1.0
 1017306592,Lepug4,MOPSYARKI,0.0,1.0
 1017443733,d1kusha,Team *Nicolay Bascov*,0.0,1.0
-1017574054,Chesign,Inquisitor's,10176841.0,2.0
+1017574054,Chesign,27 MOB,8206480.0,2.0
 1017816033,ycu,FSG,10157566.0,3.0
 1018381567,Chaos,Yellow Submarine,9455253.0,1.0
 1018622226,  Madrid,TEAM TTOPOX,9131643.0,1.0
@@ -2947,6 +2962,7 @@ account_id,name,team_name,team_id,fantasy_role
 1027738356,xKezz,Energy,9716514.0,3.0
 1028012361,H2Owned,Siege Creep,8643834.0,1.0
 1028154894,Arkan,FEFU 2,10061298.0,2.0
+1028200429,tusyx-,manabu,9353048.0,0.0
 1028273163,Kurama_sdy,Люксембургия,9759069.0,1.0
 1028351327, fantazytx,TaxiAshot,9929892.0,2.0
 1028490655,Innokentiy,LESH TEAM,10157538.0,2.0
@@ -2993,6 +3009,7 @@ account_id,name,team_name,team_id,fantasy_role
 1033657995,WARNING_GG,INSANE,9814356.0,1.0
 1033691824,Dworm,GazMyas,10137098.0,4.0
 1033827084,6yPeBecTHuK,DEMONDESTROYERCOMMANDERAPPARACIONPROTECTOR,7871205.0,2.0
+1033962538,hyper333,ASS  Aura Team,10170465.0,2.0
 1034009904,reverie,branches,10100886.0,1.0
 1034038663,kaworu~,ННГУ,0.0,2.0
 1034183573,King,Hate,8843367.0,1.0
@@ -3020,6 +3037,7 @@ account_id,name,team_name,team_id,fantasy_role
 1038461422,DaRk1cH,Seizer,10250736.0,1.0
 1038706115,Freyjik,TripleLLL Team,0.0,2.0
 1038876842,принц прибыл,,0.0,1.0
+1039055955,Marion,Motostrelki,10252260.0,2.0
 1039073121,BRLVツDarki,Team Discipline,10136073.0,3.0
 1039194302,Cap1warras,PAPA DONER,10087959.0,2.0
 1039271996,Nikaple,Ara Agency,10136035.0,1.0
@@ -3046,11 +3064,11 @@ account_id,name,team_name,team_id,fantasy_role
 1041764096,Li,VegetableAWS,9698072.0,1.0
 1041811781,kasta,Hive,0.0,1.0
 1042131221,Fellangera,X3DE_Extreme,9402937.0,2.0
-1042205781,Dipeendep,Danyal 67,10170467.0,1.0
+1042205781,Dipeendep,PROkazniki,10272001.0,1.0
 1042365929,mega crazy,,0.0,3.0
 1042755294,incredible shit,Big Black Knur,0.0,1.0
 1043130802,Odyssey獨奏,Aomine,9414970.0,1.0
-1044002267,Satanic,TEAM VISION,9572001.0,1.0
+1044002267,Satanic,PARIVISION,9824702.0,1.0
 1044044936,KV,Velociteam,8590531.0,1.0
 1044337965,VUDI,OTHODOS,9679139.0,1.0
 1044406539,PIPIPUPU,Korkino Lions,8419968.0,1.0
@@ -3059,6 +3077,7 @@ account_id,name,team_name,team_id,fantasy_role
 1045307081,[GGBT]SPAMER,GG BroThers ,0.0,2.0
 1045425606,Leto,четкий район ,0.0,2.0
 1045979511,UZBEKISTAN,Akatsuki,0.0,1.0
+1046007459,DIED,smurf power,10242456.0,1.0
 1046017404,pashnarik,98squad,9383049.0,3.0
 1046176214,бешеный арбуз,Pukan Team,10138792.0,2.0
 1046335559,VASOCK,П0ДПИВАСЫ,9744697.0,2.0
@@ -3084,6 +3103,7 @@ account_id,name,team_name,team_id,fantasy_role
 1052171140,haha,CCG,9783017.0,1.0
 1052561562,dead idol,Nazvanie,8372259.0,3.0
 1052632852,xxof,ПЯТКИ,10224969.0,1.0
+1052786640,stacy ,SPASSK KOMBAT,10273167.0,2.0
 1053083483,екрот ,Luboye Nazvaniye,9698280.0,2.0
 1053130959,BatLuk,Ultimate Hunters,9917110.0,1.0
 1053306917,Riseiya卿,AIR DEVOURER,0.0,0.0
@@ -3154,6 +3174,7 @@ account_id,name,team_name,team_id,fantasy_role
 1064040037,sianphem,SUPERGYMN ESPORTS,8809324.0,0.0
 1064448386,loclanceew,VAZELINOVOE DRISLO,9793479.0,1.0
 1064529535,SkullVarp,Noctua Gang,8857590.0,2.0
+1064602798,harume,xmas,9460722.0,2.0
 1064699077, ashyra,LND.Esports,9303225.0,1.0
 1064725346,Seppuku,Bobrik Band,0.0,3.0
 1064926618,votememe,Пенисологи,9835081.0,1.0
@@ -3191,6 +3212,7 @@ account_id,name,team_name,team_id,fantasy_role
 1071804587,Yuzu,"NA, we'd win",10163791.0,2.0
 1071995629,wozye,СЧАСТЛИВЫЕ РОДИТЕЛИ,10269962.0,2.0
 1072025211,Fayde,Linkens Sphere Esports,9887340.0,1.0
+1072185828,Serega_Ivanych,K4CHKANARSKIE CYX4RIKI,10280234.0,2.0
 1072224883,Radiance,1кПТС,10102769.0,1.0
 1072439912,tenz1k,POVole slychaya,10150688.0,0.0
 1072967109,coolk1d,demonkids yatoro+niku subhuman,10000477.0,1.0
@@ -3321,7 +3343,7 @@ account_id,name,team_name,team_id,fantasy_role
 1100725173,hagen,arizona mesa,9717396.0,3.0
 1100741841,insignia,МАНИЯ,10137622.0,3.0
 1100868583,EvilKvazaR,Колпак-тян и её 4 ученика,10196258.0,1.0
-1100926737,nesco,le team karasiky,10157708.0,0.0
+1100926737,nesco,Сидим без дим,8965251.0,2.0
 1100977546,esayory,divine,10136765.0,1.0
 1101640444,NO MERCY,SEVERSTAL',0.0,2.0
 1101670724,oma,Team Navalny,10148806.0,1.0
@@ -3345,6 +3367,7 @@ account_id,name,team_name,team_id,fantasy_role
 1103350616,arizonatearss,Village of Hidden Pool,10144767.0,1.0
 1103384054,elmontro,Bars United,10144787.0,1.0
 1103940406,yosh1ro,Egoisto Team,10087913.0,3.0
+1103995853,SHRMOKI,SaltPower,10136306.0,2.0
 1104114221,bokal,SWAGA,10136975.0,2.0
 1104430006,Banana2,Sons of Anarchy,9317020.0,2.0
 1104452397,tm,Chrome Sports,9867554.0,2.0
@@ -3398,6 +3421,7 @@ account_id,name,team_name,team_id,fantasy_role
 1111981131,eaases,SIBERIAN BEARS,10041100.0,1.0
 1111991256,EagleStyle,Anti Smurfs.,0.0,3.0
 1112292049,DaRk1cH,Reapers From The Moon,9426411.0,1.0
+1112329538,Dobryak,Motostrelki,10252260.0,1.0
 1112430704,~(fashion)~,Team ~Fashon~,9572295.0,1.0
 1112608645,quzzip,burger,10026727.0,1.0
 1112638226,Nathan,Low Priority Kings,0.0,1.0
@@ -3417,6 +3441,7 @@ account_id,name,team_name,team_id,fantasy_role
 1114001205,Yamato,team мacaн,0.0,2.0
 1114399349,Dobri,fut job,10137195.0,2.0
 1114565516,Blue_neko71,Arbuz Team,9622235.0,2.0
+1114695147,gansfw,TEAM RETARDS,10061118.0,2.0
 1114731831,Debs,THE MASK,10137912.0,2.0
 1114840583,ximiro,Kobald Zigadir,8656734.0,3.0
 1114882457,deadhooper,Aikas Team,10137968.0,1.0
@@ -3472,6 +3497,7 @@ account_id,name,team_name,team_id,fantasy_role
 1124199329,xpectin,воздушные войска ,10150611.0,1.0
 1124300403,vopicuss,MAGMA,9753186.0,2.0
 1124310100,ESSE,Drystallis Esports,0.0,3.0
+1124313577,dimadug,,0.0,2.0
 1124346883,Globrindes,CYBSUTIS,10270518.0,1.0
 1124710342,prev1atti,sAtANagEm󠀡,0.0,0.0
 1124777036,V!ST,Murda Teams,9723954.0,1.0
@@ -3559,6 +3585,7 @@ account_id,name,team_name,team_id,fantasy_role
 1143150192,ema,Nomadic Hunters,10144027.0,1.0
 1143236426,Rekrut,Team Navalny,10148806.0,2.0
 1143275789,angelofvexbtw,Papaya Team,10186531.0,1.0
+1143308882,s1ned,smurf power,0.0,4.0
 1143460429,jerdik16,Melowness Team,9973379.0,2.0
 1143468231,ayatoki666,Team teiko,10251148.0,1.0
 1143662285,oideas,Bedolagi,9729879.0,3.0
@@ -3573,6 +3600,7 @@ account_id,name,team_name,team_id,fantasy_role
 1145210756,RADIANCE,taganka,10135582.0,1.0
 1145388451,ULTRAKILL,BraDki,9814711.0,1.0
 1145561875,sad,BroodMafia,10136877.0,1.0
+1145647991,AJlax_Sinister333,ASS  Aura Team,10170465.0,1.0
 1145892095,Apur1,6_abs0suti_7,10144363.0,2.0
 1146102054,haha,Save this reality,10144727.0,1.0
 1146249681,Dirt avocado,Team Judik,10136252.0,1.0
@@ -3707,6 +3735,7 @@ account_id,name,team_name,team_id,fantasy_role
 1175968386,haisen,fallen team,9143216.0,2.0
 1176080719,m1bz,Village of Hidden Pool,10144767.0,2.0
 1176109238,pro100ded,DDWDD,10144615.0,1.0
+1176365096,sadhaize,New Viperr Members,9572156.0,1.0
 1177048648,Toster,6oici Roshen,10137043.0,2.0
 1177198264,bychez,RazeInFace,8878902.0,1.0
 1177491584,Asterisk,IQnegative,0.0,2.0
@@ -3737,6 +3766,7 @@ account_id,name,team_name,team_id,fantasy_role
 1183531668,msp69,Milkyway Team,10136267.0,3.0
 1184104082,ZZINAKX,Seirin,0.0,3.0
 1184144685,HELPER67,lacoc,9691766.0,1.0
+1184211991,vainlain,SPASSK KOMBAT,10273167.0,1.0
 1184235100,grindcore,bez luzov squad,10144889.0,1.0
 1184684111,Dafuqqq?,DF JUNIOR,9823905.0,2.0
 1184910207,YTY,Conse Quence,9009889.0,2.0
@@ -3754,7 +3784,7 @@ account_id,name,team_name,team_id,fantasy_role
 1187806629,Frierr,TeamAkter,10136813.0,2.0
 1187859680,MavinML,BABYJONS,10137637.0,2.0
 1188063427,meowth,PATTERN,10115634.0,1.0
-1188260276,Chaos,TRIES,0.0,2.0
+1188260276,Chaos,The Last King of Offlane,10207177.0,2.0
 1188514711,Difiz,бавария team,9760666.0,1.0
 1188578142,Feyk,KRUSTY KRUBS,9137630.0,3.0
 1188736045,no talent`,Experience Gaming,9949096.0,1.0
@@ -3968,7 +3998,7 @@ account_id,name,team_name,team_id,fantasy_role
 1235276207,Scurry,ites,9949856.0,2.0
 1235531944,arkadey,Team Burmalda,0.0,3.0
 1236478053,Raiti,Team Navalny,10148806.0,2.0
-1237431202,mjolnire,RUSBEL TEAM,10233331.0,1.0
+1237431202,mjolnire,EGORPOZDNYAKOV,10233331.0,1.0
 1237539355,old chicken,疯氚箱子导致长崎速逝,10129742.0,1.0
 1238094963,weqned,ganjubas thug,9691471.0,1.0
 1238117534,MasterBaiter,Averiour,10144048.0,2.0
@@ -3983,6 +4013,7 @@ account_id,name,team_name,team_id,fantasy_role
 1239212707,UglIchild,s1mptom team,0.0,1.0
 1239923606,Snegavik,moonlight,10150387.0,2.0
 1240289403,LpS,Speed,9866581.0,2.0
+1240643308,AsTFaKT,SPASSK KOMBAT,10273167.0,1.0
 1240661525,mizu,0 win 0 girls 7 HQD,9636152.0,1.0
 1240682555,Gesslor,TaxiAshot,9929892.0,1.0
 1240769263,quota,Generation of Miracles,10261286.0,4.0
@@ -4032,6 +4063,7 @@ account_id,name,team_name,team_id,fantasy_role
 1249411189,hant3r,Team SPIRT,9454912.0,2.0
 1249449431,Kise Ryota,ZA GUL`SKOE,10196281.0,4.0
 1250072106,julavaa1,Cats rule the world,9723256.0,2.0
+1250263489,incrysteer,xmas,9460722.0,1.0
 1250288110,Dregochi,Dregochilo,10151557.0,2.0
 1250549009,кирюхаБОСС,grossgaymeisters,9958010.0,2.0
 1250588716,дрочка,,0.0,1.0
@@ -4059,6 +4091,7 @@ account_id,name,team_name,team_id,fantasy_role
 1255066427,Enobaka,The Fox Maids ,9947671.0,2.0
 1255296395,positive,2Beers,10109345.0,0.0
 1255505146,w1lfychyo,Averiour,10144048.0,1.0
+1255737039,Cactus,SPASSK KOMBAT,10273167.0,4.0
 1255967482,dominator777,Nomadic Hunters,10144027.0,1.0
 1256041387,Lifeless,Funpay,10095221.0,1.0
 1256063417,tsunderemisha,MEGA_Barsiki,10137707.0,1.0
@@ -4096,7 +4129,7 @@ account_id,name,team_name,team_id,fantasy_role
 1260294662,k0raL,Yahroma,10170308.0,1.0
 1260380939,Cupsett,Team Spirt,0.0,0.0
 1260535882,arthasgodd,KRIVBASSgang,9782766.0,1.0
-1260737963,suzuyacry,The Simurgh,0.0,0.0
+1260737963,suzuyacry, )l(aJlKue,10281848.0,2.0
 1260797641,SausageOnParty,REQUIEM OF CRYSTALLIS,10088608.0,2.0
 1260855491,Ars2701,ArseNAL,10136940.0,1.0
 1260908851,mirael,П0ДПИВАСЫ,9744697.0,1.0
@@ -4185,6 +4218,7 @@ account_id,name,team_name,team_id,fantasy_role
 1273220267,Chumazi,Excrement Gaming,9895088.0,2.0
 1273221696,"Уважаемый,",REQUIEM OF CRYSTALLIS,10088608.0,3.0
 1273313966,r3fusee,mylittlepony,9420371.0,1.0
+1273373812,exvper,UlyanovskBittle,10273230.0,1.0
 1273493130,verbludachyo,ShockWaveZ,10232637.0,2.0
 1273649795,dr3am1x,PubTera,10232248.0,2.0
 1273915678,vowtet,Veil Walkers,10261951.0,1.0
@@ -4230,14 +4264,15 @@ account_id,name,team_name,team_id,fantasy_role
 1281324322,TDM,PCCC,9905616.0,1.0
 1281330173,uonvl,Team Neverlose,9886758.0,2.0
 1281563926,Atalantasg,SaltPower,0.0,1.0
-1282463247,Cspell,Team Orchid,10135965.0,3.0
+1282463247,Cspell,Team Orchid,10135965.0,1.0
 1282612285,Balyzek,balyzekteam,10136869.0,2.0
 1282671640,highgarden,Beslis,9760502.0,1.0
 1282686505,StyxJR06,Port Soyuz Lerius,9572197.0,2.0
 1282955454,Agne,Team Wave,0.0,2.0
 1283143224,tpo,Battle Cup Stack,0.0,1.0
-1283343318,escakid,Bibinto Squad,10137577.0,3.0
+1283343318,escakid,Ex-Bibinto Squad,10137577.0,1.0
 1283412478,keight,GG Savely,0.0,3.0
+1283454463,Guru_fida,SPASSK KOMBAT,10273167.0,2.0
 1284803753,masha_sex,vlasok,10150721.0,2.0
 1284870184,Ne3Lenova,Lenova Team,10224216.0,2.0
 1284967917,zbchn,ramadan,9798324.0,2.0
@@ -4331,7 +4366,7 @@ account_id,name,team_name,team_id,fantasy_role
 1319519213,Zakviel,KMA TEAM,9905624.0,2.0
 1320316648,kinigion,Dagsault,9710839.0,2.0
 1322827043,Usseewa,,0.0,2.0
-1323518930,triggernapizdu,PiZZdaliZZЫ,9512494.0,2.0
+1323518930,triggernapizdu,PiZZdaliZZЫ,9512494.0,0.0
 1325423133,iNXaRy,SiGMA eSports,10115513.0,1.0
 1326958409,Slipper,Shadows Never Sleep,10232272.0,2.0
 1327390329,ecco2k,Pig squad,9439049.0,1.0
@@ -4346,6 +4381,7 @@ account_id,name,team_name,team_id,fantasy_role
 1338711867,radi piva<З,Tverskoy metrotram,10136085.0,1.0
 1340383227,tokyoshimura,idiots,0.0,0.0
 1340800135,wealoW_W,KMA TEAM,9905624.0,1.0
+1343964887,Psyhodelicke ,smurf power,0.0,1.0
 1344130515,анчоус,Team Mentality,10138138.0,2.0
 1344869399,r1kN0y,minion team,9957044.0,1.0
 1344975232,Damand,Team Сигмис,9524213.0,3.0
@@ -4379,7 +4415,7 @@ account_id,name,team_name,team_id,fantasy_role
 1385058971,Preasure,TASSAY,10136462.0,2.0
 1388575935,fryz1x!!!,Volar Bebe,10144008.0,1.0
 1388579716,fxlomena,SeregaPirat,9760967.0,1.0
-1389643240,DeusVult,Dreestoon Esports,0.0,2.0
+1389643240,DeusVult,Mind Breakers,10273113.0,2.0
 1390363611,noklipp,MDT,10101284.0,2.0
 1390452934,numl,Guardians of Hearts,9940267.0,1.0
 1391443141,El Cucuy,Weak Warriors,10138047.0,1.0
@@ -4392,7 +4428,7 @@ account_id,name,team_name,team_id,fantasy_role
 1396906284,p1dagog,Umbrella Corporation,10232350.0,1.0
 1398618129,Nanimo,FEED ,10137161.0,1.0
 1400835278,BeLkA,Unlucky team,10094745.0,1.0
-1400910810,motik,TeaMQ,9949095.0,3.0
+1400910810,motik,TeaMQ,9949095.0,0.0
 1402510425,Hoo Lee Sheet,Shizageddon,10096172.0,1.0
 1403046879,695,HentaiEnjoers,9264081.0,1.0
 1403790488,phychokid,Sons of Crystallis,10151017.0,3.0
@@ -4427,6 +4463,7 @@ account_id,name,team_name,team_id,fantasy_role
 1420627128,Yukiho,TeamPiskers,10042106.0,1.0
 1421542315,731,Apex Titans ,10151451.0,1.0
 1422053038,AIcool,Tirana Tigers,9718707.0,1.0
+1422249561,Divinity,UlyanovskBittle,10273230.0,2.0
 1422574908,Pathetic,Svintus Pro,10101905.0,1.0
 1422728921,Chad,Fastiv Spirit,9518040.0,2.0
 1422933951,silence,kotoamatcukami,10219582.0,1.0
@@ -4478,6 +4515,7 @@ account_id,name,team_name,team_id,fantasy_role
 1435812700,FREYR,Sons of Crystallis,10151017.0,3.0
 1436533673,Forto4ka,Energy Blast,9351891.0,3.0
 1439330063,justbuyback,МАНИЯ,10137622.0,1.0
+1439474552,Lets,UlyanovskBittle,0.0,4.0
 1440852780,Flexeezy,Night Requiem,10108485.0,2.0
 1441037958,slavabebrow,67WARRIORS,10138797.0,2.0
 1441181984,wills,Team xui,9928462.0,1.0
@@ -4566,6 +4604,7 @@ account_id,name,team_name,team_id,fantasy_role
 1477909197,proldef,MutantGaming,0.0,2.0
 1478296196,RAKETA,67 squad,10137095.0,1.0
 1478327349,Werdles,2Pizza Team,10121900.0,2.0
+1478444841,palachnafig,Serenada,10281726.0,4.0
 1478748743,malina,Team Avalanche,0.0,1.0
 1479264655,butterfly,SISKI GAMING,9608273.0,1.0
 1479435839,Pinkie Pie,ponushnya,0.0,2.0
@@ -4654,7 +4693,7 @@ account_id,name,team_name,team_id,fantasy_role
 1513178146,Яричек67,67 team,10136871.0,1.0
 1513285703,remalokkk,flowers team,10136208.0,3.0
 1513336696,主任,Wild Tsunami,10261719.0,4.0
-1513445913,Akuma,Hamam,10144733.0,1.0
+1513445913,Akuma,ANIME PSYHI,10233779.0,1.0
 1513491631,swjup,Eaters of Fear,9878182.0,2.0
 1513606672,onex,artness Esports,9379871.0,3.0
 1513861444,suigetsu,shame,10138134.0,1.0
@@ -4678,6 +4717,7 @@ account_id,name,team_name,team_id,fantasy_role
 1518876874,chikinez,BICI GAMING,10232456.0,2.0
 1518975438,ishachyo,GOMOSQUAD,10144774.0,2.0
 1518984397,Wizard,DF JUNIOR,0.0,1.0
+1519009428,Dante,smurf power,0.0,1.0
 1519555895,MRBEBES,Team Karmens,9467337.0,1.0
 1519854046,барбос,TeamBurunov,0.0,1.0
 1520545442,Dominator,Faceless Team,10081504.0,2.0
@@ -4713,7 +4753,7 @@ account_id,name,team_name,team_id,fantasy_role
 1525511337,Kakukich,QRKabans,10145345.0,1.0
 1525761481,HaReD,Krasnoyarskie,10143752.0,1.0
 1525931073,Zima,четкий район ,10144313.0,1.0
-1526111408,beauty peace,URAL,9879871.0,1.0
+1526111408,trivialfuck,K4CHKANARSKIE CYX4RIKI,10280234.0,1.0
 1526156854,SnakeHawk,98squad,9383049.0,1.0
 1526189890,fetter,Team Warta,0.0,1.0
 1526330581,Chapman,chap team,9547471.0,1.0
@@ -4723,7 +4763,7 @@ account_id,name,team_name,team_id,fantasy_role
 1527098150,Unst0ppab1ee,Dregochilo,0.0,3.0
 1527120054,Exen`,Team Skits,10054703.0,1.0
 1527164618,Defik,bez luzov squad,10144889.0,2.0
-1527226145,Макарон,2Pizza Team,10121900.0,3.0
+1527226145,Макарон,2Pizza Team,10121900.0,0.0
 1527303102,suuuyyyyy!!!,BEZMAM ESPORTS,9450030.0,3.0
 1527651309,VoVcHiCk,burger,10026727.0,1.0
 1527715278,lindt,Pony Gang Team,10224785.0,1.0
@@ -4788,16 +4828,17 @@ account_id,name,team_name,team_id,fantasy_role
 1545334291,Vexxyy,Minon.gang,10137035.0,1.0
 1545350742,ritsu嗓音,Emo fluttershy team,9819938.0,1.0
 1546533044,67,67 squad,10137095.0,1.0
-1547357518,Hgiup,Double Ellimination,9966325.0,2.0
+1547357518,Hgiup,Double Ellimination,0.0,2.0
 1547377254,jaded,fence,10136026.0,2.0
 1547608635,Kristall,67tungsahur,10163857.0,2.0
 1547969417,Tasumo帝,NamingGlaze,9634651.0,1.0
 1548051114,kirilllamtg,Team Boss,9530886.0,2.0
 1548053400,ARMIN,ROYAL,9125607.0,1.0
 1548114641,wermz,ЖирSpirit,9866305.0,2.0
+1548193171,Imoverthrown,harder,10107498.0,1.0
 1548243019,jeff hardy,ПАХАНЫ,10047955.0,1.0
 1548529454,ksellent,KristalisBOOM,10150883.0,1.0
-1548543699,louwin,SquadBastards.ONYX,10150755.0,1.0
+1548543699,louwin,SquadBastards.ONYX,0.0,1.0
 1548559143,Moriarty,Double Ellimination,0.0,1.0
 1548601516,coast,Claw,9781780.0,1.0
 1548884550,Xentaev,FirstBlood,0.0,2.0
@@ -4856,7 +4897,7 @@ account_id,name,team_name,team_id,fantasy_role
 1564339483,chakram,Emo fluttershy team,0.0,1.0
 1564433036,chervyachok,Feeders Anonymous,9471706.0,2.0
 1564584727,h0spe,Team Grebenn,9773328.0,2.0
-1564652101,Negative,Team Negative,10212230.0,3.0
+1564652101,Negative,Team Negative,10212230.0,4.0
 1564894957,moneleta,Temryk28,10137055.0,2.0
 1565733699,333,ANARCHIA TEAM,9665149.0,2.0
 1565944826,Fujiyama ,Team Wave,0.0,3.0
@@ -4911,6 +4952,7 @@ account_id,name,team_name,team_id,fantasy_role
 1583568322,DRYN,BuybackBoys,0.0,2.0
 1583788681,seijomaru,anonsport,9965656.0,1.0
 1584128348,TRAMVAIII,BuybackBoys,10151036.0,2.0
+1584516420,Vov4ik,ASS  Aura Team,10170465.0,1.0
 1585971797,P0coYo,Team Boss,9530886.0,1.0
 1586004421,Seno,Team Sixseven,10095241.0,2.0
 1586203456,SOCIETY,DANCEN,10102186.0,1.0
@@ -4924,7 +4966,7 @@ account_id,name,team_name,team_id,fantasy_role
 1587858454,legendチ,dotAsisyani,10108874.0,3.0
 1588421088,Zenix,Cheburek TEAM,10137541.0,1.0
 1588992860,ieqkdsgasad,МБОУ ЛИЦЕЙ №8,9635374.0,1.0
-1589519924,Argetik,Night bulls,10150786.0,2.0
+1589519924,Argetik,Night Bulls,10280782.0,2.0
 1589567422,Akashi Seijuro,Teikō,9807593.0,2.0
 1589617075,VESMOOL,Burmald Team,10137076.0,2.0
 1589648430,azeryss,Team NIGHTVEIL,10226115.0,1.0
@@ -4953,6 +4995,7 @@ account_id,name,team_name,team_id,fantasy_role
 1594005261,blohastik,whynotoga+4,10144138.0,1.0
 1594361018,PavelToly,GG Savely,0.0,2.0
 1594712026,TalenT,TEAM MOPS ,10182879.0,1.0
+1594799068,Zoro,Team Seeker,10233104.0,1.0
 1595482268,tgk小窺視,viva la,10136374.0,1.0
 1595565547,timoha drun,67 squad,10137095.0,1.0
 1596024855,???h4vnt3D,djvkontakt3,9657662.0,1.0
@@ -5019,6 +5062,7 @@ account_id,name,team_name,team_id,fantasy_role
 1618572658,TrYIIIHNI FeMBoy,Team feed,10033423.0,1.0
 1618964851,Mateo,ЧЕКУШКА МАФИЯ,10163631.0,1.0
 1619565901,andrey,Violence Team,10261826.0,2.0
+1620085794,Trafalgar,MONSTERS,10233741.0,1.0
 1620208889,Dance,DANCEN,10102186.0,2.0
 1620561393,REDSDAGON,NEWMETA,9530447.0,1.0
 1621594887,Xonic,OP,9690567.0,1.0
@@ -5040,7 +5084,7 @@ account_id,name,team_name,team_id,fantasy_role
 1648649085,kek227,TEAM SVYAT,9717388.0,1.0
 1649521038,asqwrt,Team Puzo,10136285.0,2.0
 1649710976,mrazil'da,NICE TRY DUDE,9792381.0,3.0
-1649984824,antilopa,BroodMafia,10136877.0,0.0
+1649984824,antilopa,BroodMafia,10136877.0,1.0
 1650331212,ZXC_LEVIK67,МегаЛадони,10137956.0,1.0
 1650402507,Marakuya,ICE team,10136874.0,1.0
 1650406132,Arleans,Люксембургия,9759069.0,1.0
@@ -5072,6 +5116,7 @@ account_id,name,team_name,team_id,fantasy_role
 1673706617,Kaidan,Akatsuki,0.0,1.0
 1673844832,Icarus | 神,Egoists,9657657.0,1.0
 1673852514,Monday_Woshka,Virtus.pro.Academy,10116530.0,1.0
+1673917882,motsoetse,smurf power,0.0,4.0
 1673963747,FRANCEV,Team PJL,0.0,1.0
 1673971382,Yatoro,DGTeam,9530533.0,1.0
 1674048674,魂katori~,Team Pancakes,9766681.0,2.0
@@ -5092,7 +5137,7 @@ account_id,name,team_name,team_id,fantasy_role
 1674564555,innocencedq,KisekinoSedai,0.0,1.0
 1674581159,whydantezzcry,98squad,9383049.0,1.0
 1674600814,Shailer,The Simurgh,0.0,0.0
-1674631378,манта пацан,smurf power,10242456.0,2.0
+1674631378,манта пацан,smurf power,0.0,4.0
 1674692457,зидан,amar,10074863.0,1.0
 1674694462,Monkela,Team Spirit,9373275.0,1.0
 1674699151,Hatimaaan,Burmalda Team,10136564.0,3.0
@@ -5135,6 +5180,7 @@ account_id,name,team_name,team_id,fantasy_role
 1678822286,aloxa69,Murda Teams,9723954.0,1.0
 1678986235,masha_sex,vlasok,10150721.0,0.0
 1679158463,Gluedsmile,Team MUSHROOMS,0.0,2.0
+1679519889,ADHD kid,Serenada,10281726.0,1.0
 1680404673,benzo,Dom Torgovli,9456703.0,1.0
 1680518150,gosha,new talent,0.0,3.0
 1681563727,Meow,Heavenly Restricted,10144408.0,1.0
@@ -5166,6 +5212,7 @@ account_id,name,team_name,team_id,fantasy_role
 1692104175,ttv/Dota1Veteran2008,Avocados From Mexico,0.0,2.0
 1692483803,P-SUNE,UzbekTeam,10034229.0,1.0
 1692582239,Kane,Emergency Gaming,9395151.0,1.0
+1692713470,sarkiz,obyvnaya ,10137972.0,4.0
 1693382517,aftereffects,dispensary,10082111.0,3.0
 1693437458,miv1nko,Shajka mig-tyans,10136069.0,1.0
 1694261634,▐▐▐,Honkai: Star Rail,9388447.0,3.0
@@ -5185,7 +5232,7 @@ account_id,name,team_name,team_id,fantasy_role
 1700793844,йа,feed,10101763.0,1.0
 1700868040,Vasco da Gama,Orbital Squad,10136065.0,2.0
 1700886969,meatballs,Chuhman',10137610.0,2.0
-1701980713,RIZZIX,ASS  Aura Team,10170465.0,1.0
+1701980713,RIZZIX,ASS  Aura Team,10170465.0,4.0
 1702636310,h0kada,Sky,0.0,0.0
 1702835716,SuperNova-,Roshan.Pro,9973235.0,1.0
 1704304701,Hollywood13th,TeamLancer,0.0,2.0
@@ -5193,11 +5240,12 @@ account_id,name,team_name,team_id,fantasy_role
 1707027881,thorf1inqq,,,
 1707749868,Fi3ryy,Eclipse Reapers,9861062.0,1.0
 1708202446,Zx,Wolf Warriors †,9635484.0,2.0
-1708557456,fire,Night bulls,10150786.0,1.0
+1708557456,fire,Night Bulls,10280782.0,1.0
 1708570401,mopsyn,Zajigalka team,10232373.0,0.0
 1709823914,x1ero,1stplaceenj,9444022.0,3.0
 1710227098,Fragile,,0.0,1.0
 1710480858,Dagon,AITeams,10232574.0,2.0
+1711752081,never,nvm,9466556.0,2.0
 1711962329,Zhirnich,SKATMAN TEAM,10157951.0,3.0
 1711996587,zombiechips,Total Control,0.0,1.0
 1712641797,Mentor-,Dark Side,10020415.0,1.0
@@ -5260,6 +5308,7 @@ account_id,name,team_name,team_id,fantasy_role
 1742899491,anOre,divine,10136765.0,1.0
 1744600919,ishak,Bukovyna Esports,9948161.0,1.0
 1746004230,EgorSkritypul,Team SuperNova,0.0,2.0
+1746083369,gotthejuice,TEAMSPIRIT,10281984.0,0.0
 1746122877,parasma,Team Grebenn,0.0,1.0
 1746896009,hikiotoshii,2republic.by,10137319.0,3.0
 1747489664,ddls,vinnitsko mariupolsko kozatinsko agapovski mizakovski good boys,10136077.0,1.0
@@ -5270,7 +5319,8 @@ account_id,name,team_name,team_id,fantasy_role
 1752979862,ltz4z,standoff4ek),9838602.0,3.0
 1753001147,dripchik,RAZUM ULYA,9989894.0,2.0
 1756299253,L9m0FS,Team Vultures,10136977.0,2.0
-1763439053,ev0lve,,0.0,4.0
+1759152980,Медицина,xmas,9460722.0,2.0
+1763439053,ev0lve,soo soon,10122525.0,4.0
 1763787191,Vayzen,Team Necessary,10137538.0,1.0
 1768096863,Ko4erga,Warpath Legion,0.0,3.0
 1768161689,pleer,Pony Gang Team,0.0,1.0
@@ -5332,6 +5382,7 @@ account_id,name,team_name,team_id,fantasy_role
 1814895831,ekbom,воздушные войска ,10150611.0,0.0
 1816719366,abuse,Team SixSeven,10136800.0,0.0
 1820226584,NKS,The dream of legends,10137628.0,1.0
+1820345270,KyltQ,ASS  Aura Team,10170465.0,2.0
 1821987505,stveez,G1venchy,10144349.0,2.0
 1823032424,airense,š84,9671738.0,2.0
 1823185083,ewr,Miyau,0.0,2.0
@@ -5341,7 +5392,7 @@ account_id,name,team_name,team_id,fantasy_role
 1824466361,SPIRT,KRISTALNO坡虎,0.0,1.0
 1825530961,gazan67mnenasralinalico,ggg,10008250.0,0.0
 1827308568,AlAX HA BITAX,DEMON DESTROYER OF ASS,10138312.0,1.0
-1827472280,JANTAN,AimBot,0.0,2.0
+1827472280,JANTAN,AimBot,0.0,1.0
 1827702732,2handedzz,SaltPower,0.0,2.0
 1827922157,TheMops,чвк вагнер ,0.0,3.0
 1828163464,helpforkids,Aikas Team,10137968.0,2.0
@@ -5385,6 +5436,7 @@ account_id,name,team_name,team_id,fantasy_role
 1845664307,twelve,The dream of legends,10137628.0,1.0
 1845780773,костя,Moonlight2,0.0,1.0
 1846914020,TendoQWE,NEGROMA,10136394.0,1.0
+1847278784,Kintaro,UlyanovskBittle,10273230.0,1.0
 1848028546,shxdxwmxre,Vesper,10107429.0,1.0
 1849432949,reincarnationmemory,jdmx,10242464.0,1.0
 1849759068,NOSLEEP,Obosrallis,10150627.0,1.0
@@ -5407,6 +5459,8 @@ account_id,name,team_name,team_id,fantasy_role
 1860388579,skotomogilnik,UZBAGOISYA,10150642.0,2.0
 1860456107,sixth_arrancar,,,
 1860921154,Tandarr,Team Bulba,10144150.0,3.0
+1861669259,yuri,truesight,9860847.0,1.0
+1861671786,SeeYouLater,UNCROWNED KINGS,0.0,1.0
 1861903171,tm,Chrome Sports,9885856.0,2.0
 1862066974,emowluha,,10075387.0,2.0
 1862391813,shlyopa,Cats rule the world,0.0,2.0
@@ -5443,7 +5497,7 @@ account_id,name,team_name,team_id,fantasy_role
 1878292463,Laufee,Pony Gang Team,10224785.0,2.0
 1878580260,valpink,Infinity Queen,9628687.0,1.0
 1879222126,visky,OSIPGANGBANG,0.0,1.0
-1879924199,Kyhutu,Partizan,1081332.0,1.0
+1879924199,Kyhutu,Partizan,0.0,1.0
 1880575281,awareness,Team Yatagarasu,9419601.0,3.0
 1880578483,dext3rx7,Wild Winners,10157543.0,2.0
 1880624008,Yasha,FaZe,10129421.0,1.0
@@ -5524,6 +5578,7 @@ account_id,name,team_name,team_id,fantasy_role
 1923861916,Ani,Andromeda,9844892.0,3.0
 1923959479,seevend,Andromeda,9844768.0,3.0
 1924708375,stepadota2,Team Chmir,9995963.0,3.0
+1925513987,exvper,UlyanovskBittle,10273230.0,2.0
 1926700699,-nekoneko,Total Snitches D34th,10196367.0,2.0
 1926715510,Hido,Enrage Gaming ,9381133.0,1.0
 1927209352,TDS,BROODSKIE TEAM,10136319.0,1.0

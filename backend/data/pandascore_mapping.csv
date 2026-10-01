@@ -1,0 +1,4 @@
+pandascore_player_id,pandascore_name,opendota_account_id,opendota_name,glicko_rating,confidence,notes
+,,,,,,"Manual mapping required - PandaScore API does not expose Dota 2 player rosters via team endpoint"
+,,,,,,"To populate: cross-reference PandaScore players from match pages with OpenDota account_ids"
+,,,,,,"Example row: 12345,PlayerName,94054790,Collapse,2100.5,1.0,Team Spirit"

@@ -1,114 +1,105 @@
-# dota-glicko-model
+# Dota 2 Match Predictor
 
-Predicts pro Dota 2 matches using player-level Glicko ratings, schedule fatigue, and role-based weights. Includes web application with upcoming match predictions and live match tracking.
+Predicts professional Dota 2 match outcomes using Glicko player ratings + gradient boosting. Trained on 7,607 pro matches with 2,081 tracked players. Includes web interface for upcoming matches and live scores.
+
+**Stack**: FastAPI + scikit-learn + React + TypeScript
+
+## What It Does
+
+- Tracks individual player skill using Glicko-1 rating system
+- Detects team fatigue from match schedules (rest days, recent games)
+- Combines Glicko math with gradient boosting for predictions
+- Shows live upcoming matches with win probabilities
+- ~70% AUC on historical test data
 
 ## Quick Start
 
-### Backend Setup
+**Requirements**: Python 3.9+, Node.js 16+
+
+**Backend**:
 ```bash
 cd backend
 python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### Run Data Pipeline
-```bash
-python3 run.py          # fetch data + train
-python3 run.py data     # fetch and process data only
-python3 run.py train    # train model only
-```
-
-### Start API Server
-```bash
-cd backend
 source .venv/bin/activate
-python3 api/main.py      # Starts on http://localhost:8000
+pip install -r requirements.txt
+python api/main.py  # runs on :8000
 ```
 
-### Start Frontend
+**Frontend**:
 ```bash
 cd frontend
 npm install
-npm run dev             # Starts on http://localhost:5173
+npm run dev  # runs on :5173
 ```
 
-Or run steps individually:
+**Config**: Copy `.env.example` to `.env` in both directories. PandaScore API key optional (for live match scores).
 
-1. `python3 src/fetch_pro_matches.py` — pull match metadata
-2. `python3 src/fetch_pro_players.py` — pull player roles
-3. `python3 src/collect_player_data.py` — pull rosters
-4. `python3 src/build_datasets.py` — build csvs
-5. `python3 src/compute_glicko.py` — build ratings
-6. `python3 src/train.py` — train model
+### Refreshing Data (Optional)
 
-## API Endpoints
+Pre-trained model included. To retrain with fresh OpenDota data:
 
-### Core Prediction
-- `POST /predict` - Predict match outcome given 5v5 account IDs
-- `GET /players` - Get all rated players with Glicko ratings
+```bash
+cd backend
+python run.py  # takes several hours due to rate limiting
+```
 
-### Upcoming & Live Matches
-- `GET /upcoming` - Upcoming matches from Liquipedia (with roster resolution)
+**Note**: OpenDota has daily rate limits - full data pull requires multiple days. Processed data already committed, so this is optional.
+
+## API
+
+- `POST /predict` - Get win probability for 5v5 player matchup
+- `GET /upcoming` - Upcoming matches from Liquipedia (with rosters)
 - `GET /live` - Currently running matches from PandaScore
+- `GET /matches` - Historical match data (paginated)
+- `GET /matches/{id}` - Match details with player rosters
+- `GET /players` - All players with Glicko ratings
 
-### Match History
-- `GET /matches` - Paginated historical matches
-- `GET /matches/{id}` - Detailed match with player rosters and ratings
+## How It Works
+
+Uses a two-stage approach:
+1. Glicko-1 computes individual player ratings chronologically
+2. Gradient boosting learns schedule adjustments (fatigue, recent match load)
+
+Custom `GlickoInit` estimator forces the model to start from pure Glicko probability, then trees learn corrections from role composition and schedule features.
+
+**Key features**:
+- Core/support rating differentials (position 1-3 vs 4-5)
+- Rest days and match frequency (last 7 days)
+- Glicko win probability (baseline)
+
+**Performance** (7,607 matches, 80/20 time split):
+- Test AUC: 0.698
+- Test Log Loss: 0.632
+- Glicko baseline: 0.639 Log Loss
+
+Match coverage: 60-80% tier 1, 30-50% tier 2 (only predict with complete rosters).
 
 ## Data Sources
 
-### Training & Ratings
-- **OpenDota API**: Historical match data (~3,926 pro matches)
-- Player-level Glicko-1 ratings computed chronologically
-- Schedule fatigue features (rest days, recent match load)
+**Training**: [OpenDota API](https://docs.opendota.com/) - 7,607 pro matches, 2,081 players (no auth needed)
 
-### Live Integration
-- **Liquipedia API**: Upcoming match schedules (free, no auth)
-- **Liquipedia Web Scraping**: Team rosters (7-day cache)
-- **Player Name Mapping**: Exact + fuzzy matching to OpenDota database
-- **PandaScore API**: Live match scores and status
+**Live**:
+- [Liquipedia API](https://dota.haglund.dev) - upcoming match schedules
+- [OpenDota API](https://docs.opendota.com/) - team rosters (7-day cache)
+- [PandaScore API](https://pandascore.co/) - live scores (requires key)
 
-## How the Model Works
+**Roster matching**: Liquipedia team name → OpenDota team ID → player account_ids → validate against Glicko database. Only show predictions for complete 5v5 rosters with ratings.
 
-The model is a `GradientBoostingClassifier` that predicts radiant win probability using **both** Glicko ratings and schedule features.
+## Project Structure
 
-A custom `GlickoInit` estimator provides the starting prediction from `glicko_win_prob`, and the boosting trees learn residual corrections from the additional features:
+```
+backend/
+  api/main.py          # FastAPI endpoints
+  src/                 # Pipeline: fetch → process → train
+  data/processed/      # CSVs (committed)
+  models/              # model.pkl + ratings (committed)
+  
+frontend/
+  src/App.tsx          # React UI (hash routing, no react-router)
+```
 
-| Feature                            | Description                                         |
-| ---------------------------------- | --------------------------------------------------- |
-| `glicko_win_prob`                  | Pre-computed Glicko win probability (baseline)      |
-| `core_rating_diff`                 | Radiant − Dire core role Glicko rating              |
-| `support_rating_diff`              | Radiant − Dire support role Glicko rating           |
-| `rest_days_diff`                   | Radiant − Dire mean rest days                       |
-| `matches_7d_diff`                  | Radiant − Dire mean matches in last 7 days          |
-| `radiant_rest_days_mean`           | Radiant average days since each player's last match |
-| `dire_rest_days_mean`              | Dire average days since each player's last match    |
-| `radiant_matches_last_7_days_mean` | Radiant average recent match load                   |
-| `dire_matches_last_7_days_mean`    | Dire average recent match load                      |
+See `DEPLOYMENT.md` for production setup, `project_context.md` for architecture details.
 
-## Data Cleaning
+---
 
-### League & Match Filtering (`fetch_pro_matches.py`)
-
-- Drops non-professional leagues (`tier != 'professional'`).
-- Blacklists exhibition matches (e.g., `20176` Streamers Battle).
-- Drops matches where either team has < 5 matches total.
-
-### Roster Integrity (`build_datasets.py`)
-
-- Drops matches without exactly 10 valid `account_id`s.
-- Standardizes UNIX timestamps to UTC `datetime`.
-- Fills missing `fantasy_role` with `NaN`.
-
-### Mathematical Safeguards (`compute_glicko.py`)
-
-- Enforces chronological sorting by `start_time` (prevents data leaks).
-- Caps `RD` (rating deviation) at 350.
-- Defaults missing `fantasy_role` to team average rating.
-
-### Feature Engineering (`train.py`)
-
-- Clips `rest_days` at 30.0 days.
-- Clips `glicko_win_prob` to `[0.01, 0.99]` (prevents infinite logits).
-- Drops matches with team `RD > 340` (filters unstable new stacks).
+Data: [OpenDota](https://www.opendota.com/) · [Liquipedia](https://liquipedia.net/dota2/) · [PandaScore](https://pandascore.co/)
