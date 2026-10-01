@@ -1,5 +1,7 @@
 backend/.venv/
-data/
+backend/data/raw/
+backend/data/features/
+backend/data/.DS_Store
 __pycache__/
 *.pyc
 .DS_Store

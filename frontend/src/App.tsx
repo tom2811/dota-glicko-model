@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const API_URL = import.meta.env.VITE_API_URL || '/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://dota-glicko-api.onrender.com';
 
 type UpcomingMatch = {
   id: string;
@@ -104,9 +104,20 @@ function LiveView() {
   useEffect(() => {
     const fetchLive = () => {
       fetch(`${API_URL}/live`)
-        .then(res => res.json())
-        .then(data => setMatches(data.matches))
-        .catch(err => console.error("Failed to fetch live matches:", err));
+        .then(res => {
+          if (!res.ok) {
+            if (res.status === 503) {
+              console.log('Backend starting up...');
+            }
+            throw new Error('API unavailable');
+          }
+          return res.json();
+        })
+        .then(data => setMatches(data.matches || []))
+        .catch(err => {
+          console.error("Failed to fetch live matches:", err);
+          setMatches([]);
+        });
     };
     
     fetchLive();
@@ -163,13 +174,24 @@ function PredictView() {
 
   useEffect(() => {
     fetch(`${API_URL}/upcoming`)
-      .then(res => res.json())
-      .then(data => {
-        setMatches(data.matches);
-        setLoaded(true);
+      .then(res => {
+        if (!res.ok) {
+          if (res.status === 503) {
+            throw new Error("Backend is starting up. Please wait 20-30 seconds and refresh the page.");
+          }
+          throw new Error('API unavailable');
+        }
+        return res.json();
       })
-      .catch(() => {
-        setError("Failed to load upcoming matches");
+      .then(data => {
+        setMatches(data.matches || []);
+        setLoaded(true);
+        setError(null);
+      })
+      .catch((err) => {
+        console.error('Failed to fetch upcoming:', err);
+        setError(err.message || "API is unavailable. Backend may be starting up.");
+        setMatches([]);
         setLoaded(true);
       });
   }, []);
@@ -277,13 +299,30 @@ function MatchHistoryView() {
   const [total, setTotal] = useState(0);
   const [expanded, setExpanded] = useState<number | null>(null);
   const [detail, setDetail] = useState<MatchDetail | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setError(null);
     fetch(`${API_URL}/matches?page=${page}&per_page=20`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          if (res.status === 503) {
+            throw new Error('Backend is starting up, please wait 20-30 seconds and refresh...');
+          }
+          throw new Error('API unavailable');
+        }
+        return res.json();
+      })
       .then(data => {
-        setMatches(data.matches);
-        setTotal(data.total);
+        setMatches(data.matches || []);
+        setTotal(data.total || 0);
+        setError(null);
+      })
+      .catch(err => {
+        console.error('Failed to fetch matches:', err);
+        setMatches([]);
+        setTotal(0);
+        setError(err.message);
       });
   }, [page]);
 
@@ -315,6 +354,16 @@ function MatchHistoryView() {
 
   return (
     <>
+      {error && (
+        <div className="border border-yellow-900/50 bg-yellow-900/10 text-yellow-400 p-4 mb-6 text-sm">
+          {error}
+        </div>
+      )}
+      
+      {!error && matches.length === 0 && (
+        <p className="text-gray-500">No match history available.</p>
+      )}
+      
       <div className="space-y-0">
         {matches.map(m => (
           <div key={m.match_id}>

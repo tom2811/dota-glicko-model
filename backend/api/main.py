@@ -15,7 +15,7 @@ load_dotenv()
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from src.train import GlickoInit
-from src import fetch_pandascore, fetch_liquipedia, scrape_liquipedia_rosters, map_players
+from src import fetch_pandascore, fetch_liquipedia, fetch_opendota_rosters, map_players
 
 app = FastAPI(title="Dota 2 Glicko API")
 
@@ -124,9 +124,9 @@ def get_upcoming_matches():
                 if not radiant_name or not dire_name or "TBD" in radiant_name or "TBD" in dire_name:
                     continue
                 
-                # Scrape rosters (from cache if available)
-                rad_roster = scrape_liquipedia_rosters.get_team_roster(radiant_name)
-                dire_roster = scrape_liquipedia_rosters.get_team_roster(dire_name)
+                # Fetch rosters from OpenDota API (cached)
+                rad_roster = fetch_opendota_rosters.get_team_roster_by_name(radiant_name)
+                dire_roster = fetch_opendota_rosters.get_team_roster_by_name(dire_name)
                 
                 # Map to OpenDota account IDs
                 rad_ids = []
